@@ -82,14 +82,36 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.get
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.get()
-```
 -->
+```python
+import requests
+
+url = 'https://api.particlehealth.com/particle-sandbox-api/api/v1/queries'
+headers = {"Content-Type": "application/json",
+'Authorization': 'token'}
+data = {
+    "address_city": "Cambridge",
+    "address_lines": [
+      "123 Main St",
+      "Apt 4"
+    ],
+    "address_state": "Massachusetts",
+    "date_of_birth": "1966-01-18",
+    "email": "john@doe.com",
+    "family_name": "Hermiston",
+    "gender": "FEMALE",
+    "given_name": "Ariel",
+    "npi": "9876",
+    "postal_code": "02138",
+    "purpose_of_use": "TREATMENT",
+    "ssn": "123-45-6789",
+    "telephone": "1-234-567-8910"
+  }
+r = requests.post(url, headers=headers, json=data)
+
+print(r.json())
+```
+
 
 ```shell
 curl -X POST "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries" -H "accept: application/json" -H "Authorization: token" -H "Content-Type: application/json" -d "{ \"address_city\": \"Cambridge\", \"address_lines\": [ \"123 Main St\", \"Apt 4\" ], \"address_state\": \"Massachusetts\", \"date_of_birth\": \"1966-01-18\", \"email\": \"john@doe.com\", \"family_name\": \"Hermiston\", \"gender\": \"FEMALE\", \"given_name\": \"Ariel\", \"npi\": \"9876\", \"postal_code\": \"02138\", \"purpose_of_use\": \"TREATMENT\", \"ssn\": \"123-45-6789\", \"telephone\": \"1-234-567-8910\"}"
