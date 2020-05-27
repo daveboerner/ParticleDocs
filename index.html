@@ -570,15 +570,14 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.delete(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.delete(2)
-```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/fdca637c-9ef6-4969-8160-9a1a8a805887'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/zip"</span><span class="p">,</span>
+<span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip.com/particle-sandbox-api/api/v1/queries/</span><span class="dl">'</span><span class="p">;</span>
@@ -625,15 +624,16 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.delete(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.delete(2)
-```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"octet-stream"</span><span class="p">,</span>
+<span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}</span><span class="dl">'</span><span class="p">;</span>
