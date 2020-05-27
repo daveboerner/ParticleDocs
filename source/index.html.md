@@ -3,13 +3,14 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
+  #- ruby
+  #- python
+  #- javascript
 
 toc_footers:
   - <a href='mailto:go@particlehealth.com'>Request a developer key</a>
 
+@color[white]
 
 includes:
   - errors
