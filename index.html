@@ -319,16 +319,44 @@ api.kittens.get()
 ```
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Cambridge</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">: [ </span><span class="se">\"</span><span class="s2">123 Main St</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Apt 4</span><span class="se">\"</span><span class="s2"> ], </span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Massachusetts</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1966-01-18</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">john@doe.com</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Hermiston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">FEMALE</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Ariel</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">9876</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02138</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">address_city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cambridge</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">address_lines</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="dl">"</span><span class="s2">123 Main St</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">Apt 4</span><span class="dl">"</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">address_state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Massachusetts</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1966-01-18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john@doe.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">family_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hermiston</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">FEMALE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">given_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ariel</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">npi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9876</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">postal_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02138</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">purpose_of_use</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TREATMENT</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">ssn</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123-45-6789</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">telephone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1-234-567-8910</span><span class="dl">"</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">datain</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">datain</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// Do something with the returned data.</span>
+<span class="p">});</span>
+
+
 </code></pre></div>
-<!--
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('token');
-let kittens = api.kittens.get();
-```
--->
-
 <blockquote>
 <p>The above command returns JSON matching the body of the POST as well as a state of pending</p>
 </blockquote>
@@ -549,16 +577,25 @@ api.kittens.delete(2)
 ```
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip.com/particle-sandbox-api/api/v1/queries/</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/zip</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// Do something with the returned data.</span>
+<span class="p">});</span>
+
+
 </code></pre></div>
-<!--
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('token');
-let max = api.kittens.delete(2);
-```
--->
-
 <blockquote>
 <p>The above command returns a zip file of all files found for the patient.</p>
 </blockquote>
@@ -595,16 +632,23 @@ api.kittens.delete(2)
 ```
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/octet-stream</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// Do something with the returned data.</span>
+<span class="p">});</span>
 </code></pre></div>
-<!--
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('token');
-let max = api.kittens.delete(2);
-```
--->
-
 <blockquote>
 <p>The above command returns a specified file found for the patient.</p>
 </blockquote>
