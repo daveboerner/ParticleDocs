@@ -5,7 +5,7 @@ title: API Reference
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   #- ruby
-  #- python
+  - python
   - javascript
 
 toc_footers:
@@ -21,7 +21,7 @@ search: true
 
 Particle Health supports a RESTful Web Service based off the FHIR and CCDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p>
 
-We have language bindings in Shell! You can view code examples in the dark area to the right.
+We have language bindings in Shell, JavaScript and Python! You can view code examples in the dark area to the right, just select the tab of your prefered language.
 
 # Authentication
 
@@ -33,13 +33,18 @@ require 'kittn'
 
 api = Kittn::APIClient.authorize!('token')
 ```
+-->
 
 ```python
-import kittn
+import requests
 
-api = kittn.authorize('token')
+url = 'api_endpoint_here'
+headers = {'Authorization': 'token'}
+r = requests.get(url, headers=headers)
+
+print(r.json())
 ```
--->
+
 
 ```shell
 # With shell, you can just pass the correct header with each request
