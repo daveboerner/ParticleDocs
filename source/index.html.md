@@ -94,6 +94,7 @@ api.kittens.get()
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
   -X "POST"
   -H "Authorization: token"
+  -H "accept: application/json"
 ```
 
 ```javascript
@@ -179,7 +180,8 @@ api.kittens.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
+  -H "accept: application/json"
   -H "Authorization: token"
 ```
 
@@ -245,6 +247,7 @@ api.kittens.delete(2)
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
   -H "Authorization: token"
+  -H "accept: application/json"
 ```
 
 ```javascript
