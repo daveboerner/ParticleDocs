@@ -321,10 +321,7 @@ api = kittn.authorize('token')
 api.kittens.get()
 ```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span>
-  <span class="nt">-X</span> POST
-  <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-  <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Cambridge</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">: [ </span><span class="se">\"</span><span class="s2">123 Main St</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Apt 4</span><span class="se">\"</span><span class="s2"> ], </span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Massachusetts</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1966-01-18</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">john@doe.com</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Hermiston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">FEMALE</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Ariel</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">9876</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02138</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
 </code></pre></div>
 <!-->
 ```javascript
@@ -402,9 +399,7 @@ api = kittn.authorize('token')
 api.kittens.get(2)
 ```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
-  <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
 <!-->
 
@@ -464,9 +459,7 @@ api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-  <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
 <!-->
 ```javascript
@@ -545,9 +538,7 @@ api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"</span>
-  <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
 <!-->
 ```javascript
@@ -593,9 +584,7 @@ api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
 -->
-<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span>
-  <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
 <!-->
 ```javascript
