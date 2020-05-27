@@ -6,7 +6,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   #- ruby
   #- python
-  #- javascript
+  - javascript
 
 toc_footers:
   - <a href='mailto:go@particlehealth.com'>Request a developer key</a>
@@ -46,13 +46,15 @@ api = kittn.authorize('token')
 curl "api_endpoint_here" -H "Authorization: token"
 ```
 
-<!--
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('token');
+```javascript
+var url ='api_endpoint_here';
+var headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token"
+}
 ```
--->
+
 
 > Make sure to replace `token` with your API key.
 
