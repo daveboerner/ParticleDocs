@@ -301,15 +301,23 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>token</code> with your personal API key.
 </aside>
-<h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
+<!--
+```ruby
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('token')
+api.kittens.get
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span>
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.get()
+```
+-->
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span>
   <span class="nt">-X</span> POST
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
@@ -369,15 +377,23 @@ You must replace <code>token</code> with your personal API key.
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
 </aside>
-<h2 id='get-status-of-all-queries'>GET status of all Queries</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-status-of-all-queries'>GET status of all Queries</h2>
+<!--
+```ruby
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('token')
+api.kittens.get(2)
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.get(2)
+```
+-->
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
@@ -417,15 +433,23 @@ address_lines is an array with each street line seperated by a ,
 <p>This endpoint returns the status of all queries.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/</code></p>
-<h2 id='get-status-of-a-query'>GET status of a Query</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-status-of-a-query'>GET status of a Query</h2>
+<!--
+```ruby
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('token')
+api.kittens.delete(2)
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.delete(2)
+```
+-->
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
@@ -485,15 +509,23 @@ address_lines is an array with each street line seperated by a ,
 <td>The ID of the query to request files of</td>
 </tr>
 </tbody></table>
-<h2 id='get-zip-file'>GET Zip File</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-zip-file'>GET Zip File</h2>
+<!--
+```ruby
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('token')
+api.kittens.delete(2)
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"</span>
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.delete(2)
+```
+-->
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
@@ -520,15 +552,23 @@ address_lines is an array with each street line seperated by a ,
 <td>The ID of the query to request a zipped file of</td>
 </tr>
 </tbody></table>
-<h2 id='get-file'>GET File</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='get-file'>GET File</h2>
+<!--
+```ruby
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('token')
+api.kittens.delete(2)
+```
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span>
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.delete(2)
+```
+-->
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
