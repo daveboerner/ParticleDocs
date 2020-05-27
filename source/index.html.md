@@ -375,6 +375,7 @@ let api = kittn.authorize('token');
 let max = api.kittens.delete(2);
 ```
 -->
+
 > The above command returns a specified file found for the patient.
 
 This endpoint retrieves a specified file found for the patient.
