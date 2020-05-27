@@ -178,15 +178,27 @@ api.kittens.get(2)
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/" -H "accept: application/json" -H "Authorization: token"
 ```
-<!--
+
 
 ```javascript
-const kittn = require('kittn');
+const fetch = require('node-fetch');
 
-let api = kittn.authorize('token');
-let max = api.kittens.get(2);
+var url ='https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/';
+var headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token"
+}
+
+fetch(url, { method: 'GET', headers: headers})
+  .then((res) => {
+     return res.json()
+})
+.then((json) => {
+  console.log(json);
+  // Do something with the returned data.
+});
 ```
--->
+
 > The above command returns status of all queries in json like:
 
 ```json
@@ -245,14 +257,26 @@ api.kittens.delete(2)
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}" -H "accept: application/json" -H "Authorization: token"
 ```
 
-<!--
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('token');
-let max = api.kittens.delete(2);
+```javascript
+const fetch = require('node-fetch');
+
+var url ='https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}';
+var headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token"
+}
+
+fetch(url, { method: 'GET', headers: headers})
+  .then((res) => {
+     return res.json()
+})
+.then((json) => {
+  console.log(json);
+  // Do something with the returned data.
+});
 ```
--->
+
 > The above command returns JSON structured like this:
 
 ```json
