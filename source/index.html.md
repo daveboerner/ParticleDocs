@@ -348,7 +348,7 @@ query_id | The ID of the query to request a zipped file of
 
 ## GET File
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
