@@ -127,10 +127,11 @@ let kittens = api.kittens.get();
 
 ### Body Payload
 
-```json
+```
 {
   "address_city": "Cambridge",
-  "address_lines": [
+  "address_lines": 
+  [
     "123 Main St",
     "Apt 4"
   ],
@@ -152,7 +153,7 @@ let kittens = api.kittens.get();
 address_lines is an array with each street line seperated by a ,
 </aside>
 
-## GET Status of all Queries
+## GET status of all Queries
 
 ```ruby
 require 'kittn'
@@ -212,13 +213,11 @@ let max = api.kittens.get(2);
 
 This endpoint returns the status of all queries.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/<ID>`
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/`
 
-## Delete a Specific Kitten
+## GET status of a Query
 
 ```ruby
 require 'kittn'
@@ -251,20 +250,49 @@ let max = api.kittens.delete(2);
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "queries":
+  [
+    "id":"fdca637c-9ef6-4969-8160-9a1a8a805887",
+    "demographics":
+      {
+        "given_name":"Ariel",
+        "family_name":"Hermiston",
+        "date_of_birth":"1966-01-18",
+        "gender":"FEMALE",
+        "ssn":"123-45-6789",
+        "email":"john@doe.com",
+        "address_lines":
+          ["123 Main St",
+          "Apt 4"],
+        "address_state":"Massachusetts",
+        "address_city":"Cambridge",
+        "postal_code":"02138",
+        "telephone":"(234) 567-8910",
+        "npi":"9876",
+        "purpose_of_use":"TREATMENT"
+      },
+    "state":"COMPLETE",
+    "files":
+      [
+        {"id":"8d83a62a-f4e0-4ca8-983b-07d8cdcc5329",
+      "title":"019713e6-e7c1-4e30-873f-eb5b33f8ff55",
+      "type":"application/xml",
+      "url":"/api/v1/files/fdca637c-9ef6-4969-8160-9a1a8a805887/8d83a62a-f4e0-4ca8-983b-07d8cdcc5329"
+       }
+      ]
+  ]
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint retrieves all files associated with a query.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/<id>'
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+id | The ID of the query to request files of
 
