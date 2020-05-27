@@ -26,6 +26,7 @@ We have language bindings in Shell! You can view code examples in the dark area 
 
 > To authorize, use this code:
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -37,6 +38,7 @@ import kittn
 
 api = kittn.authorize('token')
 ```
+-->
 
 ```shell
 # With shell, you can just pass the correct header with each request
