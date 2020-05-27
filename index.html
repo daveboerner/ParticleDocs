@@ -267,7 +267,7 @@
 <p>To authorize, use this code:</p>
 </blockquote>
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -284,7 +284,7 @@ api = kittn.authorize('token')
 curl <span class="s2">"api_endpoint_here"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -306,7 +306,7 @@ let api = kittn.authorize('token');
 You must replace <code>token</code> with your personal API key.
 </aside>
 <h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -323,7 +323,7 @@ api.kittens.get()
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Cambridge</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">: [ </span><span class="se">\"</span><span class="s2">123 Main St</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Apt 4</span><span class="se">\"</span><span class="s2"> ], </span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Massachusetts</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1966-01-18</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">john@doe.com</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Hermiston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">FEMALE</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Ariel</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">9876</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02138</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
 </code></pre></div>
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -384,7 +384,7 @@ let kittens = api.kittens.get();
 address_lines is an array with each street line seperated by a ,
 </aside>
 <h2 id='get-status-of-all-queries'>GET status of all Queries</h2>
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -401,7 +401,7 @@ api.kittens.get(2)
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
-<!-->
+<!--
 
 ```javascript
 const kittn = require('kittn');
@@ -461,7 +461,7 @@ api.kittens.delete(2)
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -523,7 +523,7 @@ let max = api.kittens.delete(2);
 </tr>
 </tbody></table>
 <h2 id='get-zip-file'>GET Zip File</h2>
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -540,7 +540,7 @@ api.kittens.delete(2)
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -586,7 +586,7 @@ api.kittens.delete(2)
 -->
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div>
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -626,7 +626,7 @@ let max = api.kittens.delete(2);
 <p>Please visit our <a href="https://api.particlehealth.com/portal/">developer portal</a>. 
 <img src="images/phdiagram-c194a0de.png" class="logo" alt="Logo" /></p>
 <h1 id='errors'>Errors</h1>
-<!-->
+<!--
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
