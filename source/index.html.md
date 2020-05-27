@@ -5,12 +5,12 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   #- ruby
   #- python
-  #- javascript
+  - javascript
 
 toc_footers:
   - <a href='mailto:go@particlehealth.com'>Request a developer key</a>
 
-@color[white]
+@color[orange]
 
 includes:
   - errors
@@ -22,7 +22,7 @@ search: true
 
 Particle Health supports a RESTful Web Service based off the FHIR and CCDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p>
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell! You can view code examples in the dark area to the right.
 
 # Authentication
 
