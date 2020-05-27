@@ -299,7 +299,7 @@ This endpoint retrieves all file pointers associated with a query.
 
 ### HTTP Request
 
-`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}'
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}`
 
 ### URL Parameters
 
@@ -342,7 +342,7 @@ This endpoint retrieves all files associated with a query as a zip file for down
 
 ### HTTP Request
 
-`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip`
 
 ### URL Parameters
 
@@ -385,7 +385,7 @@ This endpoint retrieves a specified file found for the patient.
 
 ### HTTP Request
 
-`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}'
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}`
 
 ### URL Parameters
 
