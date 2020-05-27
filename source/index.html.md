@@ -152,7 +152,7 @@ let kittens = api.kittens.get();
 address_lines is an array with each street line seperated by a ,
 </aside>
 
-## Get a Specific Kitten
+## GET Status of all Queries
 
 ```ruby
 require 'kittn'
@@ -180,31 +180,43 @@ let api = kittn.authorize('token');
 let max = api.kittens.get(2);
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns status of all queries like:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "queries":
+  [
+    "id":"fdca637c-9ef6-4969-8160-9a1a8a805887",
+    "demographics":
+      {
+        "given_name":"Ariel",
+        "family_name":"Hermiston",
+        "date_of_birth":"1966-01-18",
+        "gender":"FEMALE",
+        "ssn":"123-45-6789",
+        "email":"john@doe.com",
+        "address_lines":
+          ["123 Main St",
+          "Apt 4"],
+        "address_state":"Massachusetts",
+        "address_city":"Cambridge",
+        "postal_code":"02138",
+        "telephone":"(234) 567-8910",
+        "npi":"9876",
+        "purpose_of_use":"TREATMENT"
+      },
+    "state":"COMPLETE"
+  ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint returns the status of all queries.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/<ID>`
 
 ## Delete a Specific Kitten
 
