@@ -42,8 +42,7 @@ api = kittn.authorize('token')
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: token"
+curl "api_endpoint_here" -H "Authorization: token"
 ```
 
 <!--
