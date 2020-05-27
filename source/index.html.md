@@ -68,6 +68,7 @@ You must replace <code>token</code> with your personal API key.
 
 ## POST Demographics
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -81,6 +82,7 @@ import kittn
 api = kittn.authorize('token')
 api.kittens.get()
 ```
+-->
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
@@ -157,6 +159,7 @@ address_lines is an array with each street line seperated by a ,
 
 ## GET status of all Queries
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -170,7 +173,7 @@ import kittn
 api = kittn.authorize('token')
 api.kittens.get(2)
 ```
-
+-->
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
   -H "accept: application/json"
@@ -222,6 +225,7 @@ This endpoint returns the status of all queries.
 
 ## GET status of a Query
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -235,6 +239,7 @@ import kittn
 api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
+-->
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
@@ -301,6 +306,7 @@ query_id | The ID of the query to request files of
 
 ## GET Zip File
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -314,6 +320,7 @@ import kittn
 api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
+-->
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"
@@ -344,6 +351,7 @@ query_id | The ID of the query to request a zipped file of
 
 ## GET File
 
+<!--
 ```ruby
 require 'kittn'
 
@@ -357,6 +365,7 @@ import kittn
 api = kittn.authorize('token')
 api.kittens.delete(2)
 ```
+-->
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"
