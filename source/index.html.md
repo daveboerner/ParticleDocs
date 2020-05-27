@@ -84,6 +84,7 @@ api.kittens.get()
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
+  -X "POST"
   -H "Authorization: token"
 ```
 
@@ -127,7 +128,7 @@ let kittens = api.kittens.get();
 
 ### Body Payload
 
-```
+
 {
   "address_city": "Cambridge",
   "address_lines": 
@@ -147,7 +148,7 @@ let kittens = api.kittens.get();
   "ssn": "123-45-6789",
   "telephone": "1-234-567-8910"
 }
-```
+
 
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
@@ -181,7 +182,7 @@ let api = kittn.authorize('token');
 let max = api.kittens.get(2);
 ```
 
-> The above command returns status of all queries like:
+> The above command returns status of all queries in json like:
 
 ```json
 {
@@ -234,8 +235,7 @@ api.kittens.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
+curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
   -H "Authorization: token"
 ```
 
@@ -284,7 +284,7 @@ let max = api.kittens.delete(2);
 }
 ```
 
-This endpoint retrieves all files associated with a query.
+This endpoint retrieves all file pointers associated with a query.
 
 ### HTTP Request
 
