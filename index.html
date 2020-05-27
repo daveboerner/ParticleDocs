@@ -234,6 +234,9 @@
                     <a href="#post-demographics" class="toc-h2 toc-link" data-title="POST Demographics">POST Demographics</a>
                   </li>
                   <li>
+                    <a href="#body" class="toc-h2 toc-link" data-title="Body ">Body </a>
+                  </li>
+                  <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
                   </li>
                   <li>
@@ -303,50 +306,54 @@ You must replace <code>token</code> with your personal API key.
 <span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON matching the body of the POST as well as a state of pending&lt;</p>
+<p>The above command returns JSON matching the body of the POST as well as a state of pending</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"fdca637c-9ef6-4969-8160-9a1a8a805887"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"demographics"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"given_name"</span><span class="p">:</span><span class="s2">"Ariel"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"family_name"</span><span class="p">:</span><span class="s2">"Hermiston"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="s2">"1966-01-18"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"FEMALE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ssn"</span><span class="p">:</span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john@doe.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Apt 4"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"address_state"</span><span class="p">:</span><span class="s2">"Massachusetts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_city"</span><span class="p">:</span><span class="s2">"Cambridge"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="s2">"02138"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"telephone"</span><span class="p">:</span><span class="s2">"(234) 567-8910"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"npi"</span><span class="p">:</span><span class="s2">"9876"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="s2">"TREATMENT"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"PENDING"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
+<h3 id='body-payload'>Body Payload</h3><h2 id='body'>Body </h2>
+<p>{
+  &quot;address_city&quot;: &quot;Cambridge&quot;,
+  &quot;address_lines&quot;: [
+    &quot;123 Main St&quot;,
+    &quot;Apt 4&quot;
+  ],
+  &quot;address_state&quot;: &quot;Massachusetts&quot;,
+  &quot;date_of_birth&quot;: &quot;1966-01-18&quot;,
+  &quot;email&quot;: &quot;john@doe.com&quot;,
+  &quot;family_name&quot;: &quot;Hermiston&quot;,
+  &quot;gender&quot;: &quot;FEMALE&quot;,
+  &quot;given_name&quot;: &quot;Ariel&quot;,
+  &quot;npi&quot;: &quot;9876&quot;,
+  &quot;postal_code&quot;: &quot;02138&quot;,
+  &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
+  &quot;ssn&quot;: &quot;123-45-6789&quot;,
+  &quot;telephone&quot;: &quot;1-234-567-8910&quot;
+}</p>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+address_lines is an array with each street line seperated by a ,
 </aside>
 <h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
