@@ -41,8 +41,6 @@ import requests
 url = 'api_endpoint_here'
 headers = {'Authorization': 'token'}
 r = requests.get(url, headers=headers)
-
-print(r.json())
 ```
 
 
@@ -205,14 +203,18 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.get(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.get(2)
-```
 -->
+```python
+import requests
+
+url = 'https://api.particlehealth.com/particle-sandbox-api/api/v1/queries'
+headers = {"Content-Type": "application/json",
+'Authorization': 'token'}
+r = requests.get(url, headers=headers)
+
+print(r.json())
+```
+
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/" -H "accept: application/json" -H "Authorization: token"
 ```
@@ -282,14 +284,18 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.delete(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.delete(2)
-```
 -->
+```python
+import requests
+
+url = 'https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}'
+headers = {"Content-Type": "application/json",
+'Authorization': 'token'}
+r = requests.get(url, headers=headers)
+
+print(r.json())
+```
+
 
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}" -H "accept: application/json" -H "Authorization: token"
