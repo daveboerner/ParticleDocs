@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   #- ruby
   #- python
-  - javascript
+  #- javascript
 
 toc_footers:
   - <a href='mailto:go@particlehealth.com'>Request a developer key</a>
@@ -26,7 +26,7 @@ We have language bindings in Shell! You can view code examples in the dark area 
 
 > To authorize, use this code:
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -46,11 +46,13 @@ curl "api_endpoint_here"
   -H "Authorization: token"
 ```
 
+<!-->
 ```javascript
 const kittn = require('kittn');
 
 let api = kittn.authorize('token');
 ```
+-->
 
 > Make sure to replace `token` with your API key.
 
@@ -68,7 +70,7 @@ You must replace <code>token</code> with your personal API key.
 
 ## POST Demographics
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -90,14 +92,14 @@ curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
   -H "Authorization: token"
   -H "accept: application/json"
 ```
-
+<!-->
 ```javascript
 const kittn = require('kittn');
 
 let api = kittn.authorize('token');
 let kittens = api.kittens.get();
 ```
-
+-->
 > The above command returns JSON matching the body of the POST as well as a state of pending
 
 ```json
@@ -159,7 +161,7 @@ address_lines is an array with each street line seperated by a ,
 
 ## GET status of all Queries
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -179,6 +181,7 @@ curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
   -H "accept: application/json"
   -H "Authorization: token"
 ```
+<!-->
 
 ```javascript
 const kittn = require('kittn');
@@ -186,7 +189,7 @@ const kittn = require('kittn');
 let api = kittn.authorize('token');
 let max = api.kittens.get(2);
 ```
-
+-->
 > The above command returns status of all queries in json like:
 
 ```json
@@ -247,13 +250,14 @@ curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
   -H "accept: application/json"
 ```
 
+<!-->
 ```javascript
 const kittn = require('kittn');
 
 let api = kittn.authorize('token');
 let max = api.kittens.delete(2);
 ```
-
+-->
 > The above command returns JSON structured like this:
 
 ```json
@@ -306,7 +310,7 @@ query_id | The ID of the query to request files of
 
 ## GET Zip File
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -328,12 +332,14 @@ curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id
   -H "Authorization: token"
 ```
 
+<!-->
 ```javascript
 const kittn = require('kittn');
 
 let api = kittn.authorize('token');
 let max = api.kittens.delete(2);
 ```
+-->
 
 > The above command returns a zip file of all files found for the patient.
 
@@ -351,7 +357,7 @@ query_id | The ID of the query to request a zipped file of
 
 ## GET File
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -372,14 +378,14 @@ curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id
   -H "accept: application/octet-stream"
   -H "Authorization: token"
 ```
-
+<!-->
 ```javascript
 const kittn = require('kittn');
 
 let api = kittn.authorize('token');
 let max = api.kittens.delete(2);
 ```
-
+-->
 > The above command returns a specified file found for the patient.
 
 This endpoint retrieves a specified file found for the patient.
