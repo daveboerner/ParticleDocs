@@ -23,15 +23,6 @@ Particle Health supports a RESTful Web Service based off the FHIR and CCDA stand
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-# Architecture
-
-By simply requesting information with a minimum set of demographic parameters, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. 
-    
-Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. 
-
-Please visit our <a href="https://api.particlehealth.com/portal/">developer portal</a>. 
-<img src="images/phdiagram.png" class="logo" alt="Logo" />
-
 # Authentication
 
 > To authorize, use this code:
@@ -92,7 +83,7 @@ api.kittens.get()
 
 ```shell
 curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
-  -X "POST"
+  -X POST
   -H "Authorization: token"
   -H "accept: application/json"
 ```
@@ -393,3 +384,12 @@ Parameter | Description
 --------- | -----------
 query_id | The ID of the query to request
 file_id | The ID of the file to request
+
+# Architecture
+
+By simply requesting information with a minimum set of demographic parameters, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. 
+    
+Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. 
+
+Please visit our <a href="https://api.particlehealth.com/portal/">developer portal</a>. 
+<img src="images/phdiagram.png" class="logo" alt="Logo" />
