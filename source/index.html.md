@@ -54,7 +54,7 @@ let api = kittn.authorize('token');
 
 > Make sure to replace `token` with your API key.
 
-Particle uses API keys to allow access to the API.  <go@particlehealth class="com">Request an API key</go@particlehealth> 
+Particle uses API keys to allow access to the API.  <a href='mailto:go@particlehealth.com'>Request a developer key</a> 
 
 Particle expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
