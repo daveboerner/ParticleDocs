@@ -127,8 +127,7 @@ let kittens = api.kittens.get();
 
 ### Body Payload
 
-Body 
---------- 
+```json
 {
   "address_city": "Cambridge",
   "address_lines": [
@@ -147,6 +146,7 @@ Body
   "ssn": "123-45-6789",
   "telephone": "1-234-567-8910"
 }
+```
 
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
