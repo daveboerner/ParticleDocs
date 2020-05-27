@@ -1,7 +1,6 @@
 ---
 title: API Reference
-<body style="background-color:red;">
-</body>
+
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
