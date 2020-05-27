@@ -234,9 +234,6 @@
                     <a href="#post-demographics" class="toc-h2 toc-link" data-title="POST Demographics">POST Demographics</a>
                   </li>
                   <li>
-                    <a href="#body" class="toc-h2 toc-link" data-title="Body ">Body </a>
-                  </li>
-                  <li>
                     <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
                   </li>
                   <li>
@@ -332,26 +329,25 @@ You must replace <code>token</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
-<h3 id='body-payload'>Body Payload</h3><h2 id='body'>Body </h2>
-<p>{
-  &quot;address_city&quot;: &quot;Cambridge&quot;,
-  &quot;address_lines&quot;: [
-    &quot;123 Main St&quot;,
-    &quot;Apt 4&quot;
-  ],
-  &quot;address_state&quot;: &quot;Massachusetts&quot;,
-  &quot;date_of_birth&quot;: &quot;1966-01-18&quot;,
-  &quot;email&quot;: &quot;john@doe.com&quot;,
-  &quot;family_name&quot;: &quot;Hermiston&quot;,
-  &quot;gender&quot;: &quot;FEMALE&quot;,
-  &quot;given_name&quot;: &quot;Ariel&quot;,
-  &quot;npi&quot;: &quot;9876&quot;,
-  &quot;postal_code&quot;: &quot;02138&quot;,
-  &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
-  &quot;ssn&quot;: &quot;123-45-6789&quot;,
-  &quot;telephone&quot;: &quot;1-234-567-8910&quot;
-}</p>
-
+<h3 id='body-payload'>Body Payload</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cambridge"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Apt 4"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Massachusetts"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1966-01-18"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@doe.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hermiston"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEMALE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ariel"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"npi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9876"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02138"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-234-567-8910"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
 </aside>
