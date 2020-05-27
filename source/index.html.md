@@ -87,10 +87,7 @@ api.kittens.get()
 -->
 
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"
-  -X POST
-  -H "Authorization: token"
-  -H "accept: application/json"
+curl -X POST "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries" -H "accept: application/json" -H "Authorization: token" -H "Content-Type: application/json" -d "{ \"address_city\": \"Cambridge\", \"address_lines\": [ \"123 Main St\", \"Apt 4\" ], \"address_state\": \"Massachusetts\", \"date_of_birth\": \"1966-01-18\", \"email\": \"john@doe.com\", \"family_name\": \"Hermiston\", \"gender\": \"FEMALE\", \"given_name\": \"Ariel\", \"npi\": \"9876\", \"postal_code\": \"02138\", \"purpose_of_use\": \"TREATMENT\", \"ssn\": \"123-45-6789\", \"telephone\": \"1-234-567-8910\"}"
 ```
 <!-->
 ```javascript
@@ -177,9 +174,7 @@ api.kittens.get(2)
 ```
 -->
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
-  -H "accept: application/json"
-  -H "Authorization: token"
+curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/" -H "accept: application/json" -H "Authorization: token"
 ```
 <!-->
 
@@ -245,9 +240,7 @@ api.kittens.delete(2)
 -->
 
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
-  -H "Authorization: token"
-  -H "accept: application/json"
+curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}" -H "accept: application/json" -H "Authorization: token"
 ```
 
 <!-->
@@ -327,9 +320,7 @@ api.kittens.delete(2)
 -->
 
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"
-  -H "accept: application/zip"
-  -H "Authorization: token"
+curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip" -H "accept: application/zip" -H "Authorization: token"
 ```
 
 <!-->
@@ -374,9 +365,7 @@ api.kittens.delete(2)
 -->
 
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"
-  -H "accept: application/octet-stream"
-  -H "Authorization: token"
+curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}" -H "accept: application/octet-stream" -H "Authorization: token"
 ```
 <!-->
 ```javascript
