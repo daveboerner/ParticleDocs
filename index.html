@@ -296,6 +296,7 @@ You must replace <code>token</code> with your personal API key.
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span>
+  <span class="nt">-X</span> <span class="s2">"POST"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
 
@@ -329,26 +330,27 @@ You must replace <code>token</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
-<h3 id='body-payload'>Body Payload</h3><div class="highlight"><pre class="highlight plaintext"><code>{
-  "address_city": "Cambridge",
-  "address_lines": 
+<h3 id='body-payload'>Body Payload</h3>
+<p>{
+  &quot;address_city&quot;: &quot;Cambridge&quot;,
+  &quot;address_lines&quot;: 
   [
-    "123 Main St",
-    "Apt 4"
+    &quot;123 Main St&quot;,
+    &quot;Apt 4&quot;
   ],
-  "address_state": "Massachusetts",
-  "date_of_birth": "1966-01-18",
-  "email": "john@doe.com",
-  "family_name": "Hermiston",
-  "gender": "FEMALE",
-  "given_name": "Ariel",
-  "npi": "9876",
-  "postal_code": "02138",
-  "purpose_of_use": "TREATMENT",
-  "ssn": "123-45-6789",
-  "telephone": "1-234-567-8910"
-}
-</code></pre></div>
+  &quot;address_state&quot;: &quot;Massachusetts&quot;,
+  &quot;date_of_birth&quot;: &quot;1966-01-18&quot;,
+  &quot;email&quot;: &quot;john@doe.com&quot;,
+  &quot;family_name&quot;: &quot;Hermiston&quot;,
+  &quot;gender&quot;: &quot;FEMALE&quot;,
+  &quot;given_name&quot;: &quot;Ariel&quot;,
+  &quot;npi&quot;: &quot;9876&quot;,
+  &quot;postal_code&quot;: &quot;02138&quot;,
+  &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
+  &quot;ssn&quot;: &quot;123-45-6789&quot;,
+  &quot;telephone&quot;: &quot;1-234-567-8910&quot;
+}</p>
+
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
 </aside>
@@ -368,7 +370,7 @@ address_lines is an array with each street line seperated by a ,
 <span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns status of all queries like:</p>
+<p>The above command returns status of all queries in json like:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"queries"</span><span class="p">:</span><span class="w">
@@ -407,8 +409,7 @@ address_lines is an array with each street line seperated by a ,
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'token'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
 
@@ -452,7 +453,7 @@ address_lines is an array with each street line seperated by a ,
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all files associated with a query.</p>
+<p>This endpoint retrieves all file pointers associated with a query.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p>`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/<id>&#39;</p>
 <h3 id='url-parameters'>URL Parameters</h3>
