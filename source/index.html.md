@@ -91,14 +91,47 @@ api.kittens.get()
 ```shell
 curl -X POST "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries" -H "accept: application/json" -H "Authorization: token" -H "Content-Type: application/json" -d "{ \"address_city\": \"Cambridge\", \"address_lines\": [ \"123 Main St\", \"Apt 4\" ], \"address_state\": \"Massachusetts\", \"date_of_birth\": \"1966-01-18\", \"email\": \"john@doe.com\", \"family_name\": \"Hermiston\", \"gender\": \"FEMALE\", \"given_name\": \"Ariel\", \"npi\": \"9876\", \"postal_code\": \"02138\", \"purpose_of_use\": \"TREATMENT\", \"ssn\": \"123-45-6789\", \"telephone\": \"1-234-567-8910\"}"
 ```
-<!--
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('token');
-let kittens = api.kittens.get();
+```javascript
+const fetch = require('node-fetch');
+
+var url ='https://api.particlehealth.com/particle-sandbox-api/api/v1/queries';
+var headers = {
+  "Content-Type": "application/json",
+  "Authorization": "token"
+}
+
+var data = {
+    "address_city": "Cambridge",
+    "address_lines": [
+      "123 Main St",
+      "Apt 4"
+    ],
+    "address_state": "Massachusetts",
+    "date_of_birth": "1966-01-18",
+    "email": "john@doe.com",
+    "family_name": "Hermiston",
+    "gender": "FEMALE",
+    "given_name": "Ariel",
+    "npi": "9876",
+    "postal_code": "02138",
+    "purpose_of_use": "TREATMENT",
+    "ssn": "123-45-6789",
+    "telephone": "1-234-567-8910"
+  }
+  var datain = JSON.stringify(data);
+  fetch(url, { method: 'POST', headers: headers, body: datain})
+  .then((res) => {
+     return res.json()
+})
+.then((json) => {
+  console.log(json);
+  // Do something with the returned data.
+});
+
+
 ```
--->
+
 > The above command returns JSON matching the body of the POST as well as a state of pending
 
 ```json
@@ -349,14 +382,28 @@ api.kittens.delete(2)
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip" -H "accept: application/zip" -H "Authorization: token"
 ```
 
-<!--
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('token');
-let max = api.kittens.delete(2);
+```javascript
+const fetch = require('node-fetch');
+
+var url ='https://api.https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip.com/particle-sandbox-api/api/v1/queries/';
+var headers = {
+  "Content-Type": "application/zip",
+  "Authorization": "token"
+}
+
+fetch(url, { method: 'GET', headers: headers})
+  .then((res) => {
+     return res.json()
+})
+.then((json) => {
+  console.log(json);
+  // Do something with the returned data.
+});
+
+
 ```
--->
+
 
 > The above command returns a zip file of all files found for the patient.
 
@@ -393,14 +440,25 @@ api.kittens.delete(2)
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}" -H "accept: application/octet-stream" -H "Authorization: token"
 ```
-<!--
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('token');
-let max = api.kittens.delete(2);
+```javascript
+const fetch = require('node-fetch');
+
+var url ='https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}';
+var headers = {
+  "Content-Type": "application/octet-stream",
+  "Authorization": "token"
+}
+
+fetch(url, { method: 'GET', headers: headers})
+  .then((res) => {
+     return res.json()
+})
+.then((json) => {
+  console.log(json);
+  // Do something with the returned data.
+});
 ```
--->
 
 > The above command returns a specified file found for the patient.
 
