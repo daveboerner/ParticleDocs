@@ -94,42 +94,62 @@ let api = kittn.authorize('token');
 let kittens = api.kittens.get();
 ```
 
-> The above command returns JSON matching the body of the POST as well as a state of pending<
+> The above command returns JSON matching the body of the POST as well as a state of pending
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
+{
+  "id":"fdca637c-9ef6-4969-8160-9a1a8a805887",
+  "demographics":
+    {
+      "given_name":"Ariel",
+      "family_name":"Hermiston",
+      "date_of_birth":"1966-01-18",
+      "gender":"FEMALE",
+      "ssn":"123-45-6789",
+      "email":"john@doe.com",
+      "address_lines":
+        ["123 Main St",
+        "Apt 4"],
+      "address_state":"Massachusetts",
+      "address_city":"Cambridge",
+      "postal_code":"02138",
+      "telephone":"(234) 567-8910",
+      "npi":"9876",
+      "purpose_of_use":"TREATMENT"
+    },
+  "state":"PENDING"
+}
+``` 
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries`
 
-### Query Parameters
+### Body Payload
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Body 
+--------- 
+{
+  "address_city": "Cambridge",
+  "address_lines": [
+    "123 Main St",
+    "Apt 4"
+  ],
+  "address_state": "Massachusetts",
+  "date_of_birth": "1966-01-18",
+  "email": "john@doe.com",
+  "family_name": "Hermiston",
+  "gender": "FEMALE",
+  "given_name": "Ariel",
+  "npi": "9876",
+  "postal_code": "02138",
+  "purpose_of_use": "TREATMENT",
+  "ssn": "123-45-6789",
+  "telephone": "1-234-567-8910"
+}
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+address_lines is an array with each street line seperated by a ,
 </aside>
 
 ## Get a Specific Kitten
