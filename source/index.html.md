@@ -72,7 +72,7 @@ Particle expects for the API key to be included in all API requests to the serve
 You must replace <code>token</code> with your personal API key.
 </aside>
 
-# Clinical
+# Clinical API Operations
 
 ## POST Demographics
 
@@ -304,3 +304,36 @@ Parameter | Description
 --------- | -----------
 id | The ID of the query to request files of
 
+## GET Zip File
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('token')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.delete(2)
+```
+
+```shell
+curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
+  -H "Authorization: token"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns a zip file of all files found for the patient.
+
+This endpoint retrieves all files associated with a query as a zip file for download.
+
+## GET File
