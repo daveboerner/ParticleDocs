@@ -380,14 +380,16 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.delete(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.delete(2)
-```
 -->
+```python
+import requests
+
+url = 'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/fdca637c-9ef6-4969-8160-9a1a8a805887'
+headers = {"Content-Type": "application/zip",
+'Authorization': 'token'}
+r = requests.get(url, headers=headers)
+```
+
 
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip" -H "accept: application/zip" -H "Authorization: token"
@@ -439,14 +441,18 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('token')
 api.kittens.delete(2)
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('token')
-api.kittens.delete(2)
-```
 -->
+```python
+import requests
+
+url = 'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}'
+headers = {"Content-Type": "octet-stream",
+'Authorization': 'token'}
+r = requests.get(url, headers=headers)
+
+print(r.text)
+```
+
 
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}" -H "accept: application/octet-stream" -H "Authorization: token"
