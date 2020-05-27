@@ -26,7 +26,7 @@ We have language bindings in Shell! You can view code examples in the dark area 
 
 > To authorize, use this code:
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -46,7 +46,7 @@ curl "api_endpoint_here"
   -H "Authorization: token"
 ```
 
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -70,7 +70,7 @@ You must replace <code>token</code> with your personal API key.
 
 ## POST Demographics
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -89,7 +89,7 @@ api.kittens.get()
 ```shell
 curl -X POST "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries" -H "accept: application/json" -H "Authorization: token" -H "Content-Type: application/json" -d "{ \"address_city\": \"Cambridge\", \"address_lines\": [ \"123 Main St\", \"Apt 4\" ], \"address_state\": \"Massachusetts\", \"date_of_birth\": \"1966-01-18\", \"email\": \"john@doe.com\", \"family_name\": \"Hermiston\", \"gender\": \"FEMALE\", \"given_name\": \"Ariel\", \"npi\": \"9876\", \"postal_code\": \"02138\", \"purpose_of_use\": \"TREATMENT\", \"ssn\": \"123-45-6789\", \"telephone\": \"1-234-567-8910\"}"
 ```
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -158,7 +158,7 @@ address_lines is an array with each street line seperated by a ,
 
 ## GET status of all Queries
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -176,7 +176,7 @@ api.kittens.get(2)
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/" -H "accept: application/json" -H "Authorization: token"
 ```
-<!-->
+<!--
 
 ```javascript
 const kittn = require('kittn');
@@ -243,7 +243,7 @@ api.kittens.delete(2)
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}" -H "accept: application/json" -H "Authorization: token"
 ```
 
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -303,7 +303,7 @@ query_id | The ID of the query to request files of
 
 ## GET Zip File
 
-<!-->
+<!--
 ```ruby
 require 'kittn'
 
@@ -323,7 +323,7 @@ api.kittens.delete(2)
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip" -H "accept: application/zip" -H "Authorization: token"
 ```
 
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
@@ -367,7 +367,7 @@ api.kittens.delete(2)
 ```shell
 curl -X GET "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}" -H "accept: application/octet-stream" -H "Authorization: token"
 ```
-<!-->
+<!--
 ```javascript
 const kittn = require('kittn');
 
