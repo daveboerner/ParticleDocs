@@ -201,7 +201,7 @@
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,7 +212,6 @@
       <img src="images/logo-9c62f59c.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -268,7 +267,7 @@
 <p>To authorize, use this code:</p>
 </blockquote>
 
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -284,10 +283,15 @@ api = kittn.authorize('token')
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div>
+<!-->
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+```
+-->
+
 <blockquote>
 <p>Make sure to replace <code>token</code> with your API key.</p>
 </blockquote>
@@ -302,7 +306,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 You must replace <code>token</code> with your personal API key.
 </aside>
 <h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -321,11 +325,16 @@ api.kittens.get()
   <span class="nt">-X</span> POST
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
 </code></pre></div>
+<!-->
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let kittens = api.kittens.get();
+```
+-->
+
 <blockquote>
 <p>The above command returns JSON matching the body of the POST as well as a state of pending</p>
 </blockquote>
@@ -378,7 +387,7 @@ api.kittens.get()
 address_lines is an array with each street line seperated by a ,
 </aside>
 <h2 id='get-status-of-all-queries'>GET status of all Queries</h2>
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -396,11 +405,17 @@ api.kittens.get(2)
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
+<!-->
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.get(2);
+```
+-->
+
 <blockquote>
 <p>The above command returns status of all queries in json like:</p>
 </blockquote>
@@ -452,11 +467,16 @@ api.kittens.delete(2)
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/json"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
+<!-->
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.delete(2);
+```
+-->
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -510,7 +530,7 @@ api.kittens.delete(2)
 </tr>
 </tbody></table>
 <h2 id='get-zip-file'>GET Zip File</h2>
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -528,11 +548,16 @@ api.kittens.delete(2)
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
+<!-->
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.delete(2);
+```
+-->
+
 <blockquote>
 <p>The above command returns a zip file of all files found for the patient.</p>
 </blockquote>
@@ -553,7 +578,7 @@ api.kittens.delete(2)
 </tr>
 </tbody></table>
 <h2 id='get-file'>GET File</h2>
-<!--
+<!-->
 ```ruby
 require 'kittn'
 
@@ -571,11 +596,16 @@ api.kittens.delete(2)
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span>
   <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
+<!-->
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.delete(2);
+```
+-->
+
 <blockquote>
 <p>The above command returns a specified file found for the patient.</p>
 </blockquote>
@@ -669,7 +699,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
