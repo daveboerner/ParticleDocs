@@ -321,7 +321,8 @@ api.kittens.delete(2)
 ```
 
 ```shell
-curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{id}"
+curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}"
+  -H "accept: application/zip"
   -H "Authorization: token"
 ```
 
@@ -336,4 +337,56 @@ let max = api.kittens.delete(2);
 
 This endpoint retrieves all files associated with a query as a zip file for download.
 
+### HTTP Request
+
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/<query_id>/zip
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+query_id | The ID of the query to request a zipped file of
+
 ## GET File
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('token')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('token')
+api.kittens.delete(2)
+```
+
+```shell
+curl "https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"
+  -H "accept: application/octet-stream"
+  -H "Authorization: token"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('token');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns a specified file found for the patient.
+
+This endpoint retrieves a specified file found for the patient.
+
+### HTTP Request
+
+`GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/<query_id>/<file_id>'
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+query_id | The ID of the query to request
+file_id | The ID of the file to request
