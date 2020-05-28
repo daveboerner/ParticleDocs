@@ -31,7 +31,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @extend %default-font;
-  background-color: $main-bg;
+  background-color: #f0f3f6;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }
