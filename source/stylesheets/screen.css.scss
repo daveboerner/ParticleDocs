@@ -24,12 +24,6 @@ under the License.
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
 
-@import url("https://fonts.googleapis.com/css?family=Rubik");html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
-}
-
 html, body {
   color: $main-text;
   padding: 0;
@@ -147,7 +141,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 36px;
+    line-height: 28px;
   }
 
   li {
@@ -183,10 +177,10 @@ html, body {
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px solid $nav-footer-border-color;
+    border-top: 1px dashed $nav-footer-border-color;
 
     li,a {
-      color: $nav-footer-text;
+      color: $nav-text;
       text-decoration: none;
     }
 
@@ -293,7 +287,7 @@ html, body {
     color: $lang-select-text;
     text-decoration: none;
     padding: 0 10px;
-    line-height: 58px;
+    line-height: 30px;
     outline: 0;
 
     &:active, &:focus {
@@ -357,7 +351,7 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: none;
+    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     background-color: #fdfdfd;
   }
