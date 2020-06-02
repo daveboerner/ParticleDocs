@@ -406,26 +406,29 @@ api.kittens.get
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
-<h3 id='body-payload'>Body Payload</h3><div class="highlight"><pre class="highlight plaintext"><code>{
-  "address_city": "Cambridge",
-  "address_lines": 
+<h3 id='body-payload'>Body Payload</h3>
+<p><code>
+{
+  &quot;address_city&quot;: &quot;Cambridge&quot;,
+  &quot;address_lines&quot;: 
   [
-    "123 Main St",
-    "Apt 4"
+    &quot;123 Main St&quot;,
+    &quot;Apt 4&quot;
   ],
-  "address_state": "Massachusetts",
-  "date_of_birth": "1966-01-18",
-  "email": "john@doe.com",
-  "family_name": "Hermiston",
-  "gender": "FEMALE",
-  "given_name": "Ariel",
-  "npi": "9876",
-  "postal_code": "02138",
-  "purpose_of_use": "TREATMENT",
-  "ssn": "123-45-6789",
-  "telephone": "1-234-567-8910"
+  &quot;address_state&quot;: &quot;Massachusetts&quot;,
+  &quot;date_of_birth&quot;: &quot;1966-01-18&quot;,
+  &quot;email&quot;: &quot;john@doe.com&quot;,
+  &quot;family_name&quot;: &quot;Hermiston&quot;,
+  &quot;gender&quot;: &quot;FEMALE&quot;,
+  &quot;given_name&quot;: &quot;Ariel&quot;,
+  &quot;npi&quot;: &quot;9876&quot;,
+  &quot;postal_code&quot;: &quot;02138&quot;,
+  &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
+  &quot;ssn&quot;: &quot;123-45-6789&quot;,
+  &quot;telephone&quot;: &quot;1-234-567-8910&quot;
 }
-</code></pre></div>
+</code></p>
+
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
 </aside>
