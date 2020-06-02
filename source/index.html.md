@@ -193,7 +193,8 @@ var data = {
 ### Body Payload
 
 
-`{
+``` 
+{
   "address_city": "Cambridge",
   "address_lines": 
   [
@@ -211,7 +212,8 @@ var data = {
   "purpose_of_use": "TREATMENT",
   "ssn": "123-45-6789",
   "telephone": "1-234-567-8910"
-}`
+}
+```
 
 
 <aside class="success">
@@ -522,18 +524,18 @@ By simply requesting information with a minimum set of demographic information, 
 
 The demographics to include in the initial POST operation body include:
 
--First Name - family_name
--Last Name - given_name
--Date of Birth - date_of_birth
--Zip - postal_code - postal_code
--Gender - gender
--Purpose Of Use - purpose_of_use
--NPI : National Provider Identifier - npi (optional - required for treatment based queries)
--City - address_city 
--State - address_state 
--Address - address_lines (optional - success rate increase of ~30%)
--Phone - telephone (optional)
--Social Security Number - ssn (optional)
+- First Name - family_name
+- Last Name - given_name
+- Date of Birth - date_of_birth
+- Zip - postal_code - postal_code
+- Gender - gender
+- Purpose Of Use - purpose_of_use
+- NPI : National Provider Identifier - npi (optional - required for treatment based queries)
+- City - address_city 
+- State - address_state 
+- Address - address_lines (optional - success rate increase of ~30%)
+- Phone - telephone (optional)
+- Social Security Number - ssn (optional)
     
 Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. 
 
