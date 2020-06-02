@@ -407,7 +407,7 @@ api.kittens.get
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
 <p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
 <h3 id='body-payload'>Body Payload</h3>
-<p>{
+<p><code>{
   &quot;address_city&quot;: &quot;Cambridge&quot;,
   &quot;address_lines&quot;: 
   [
@@ -425,7 +425,7 @@ api.kittens.get
   &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
   &quot;ssn&quot;: &quot;123-45-6789&quot;,
   &quot;telephone&quot;: &quot;1-234-567-8910&quot;
-}</p>
+}</code></p>
 
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
@@ -701,18 +701,18 @@ api.kittens.delete(2)
 
 <p>The demographics to include in the initial POST operation body include:</p>
 
-<p>First Name - family_name
-Last Name - given_name
-Date of Birth - date_of_birth
-Zip - postal_code - postal_code
-Gender - gender
-Purpose Of Use - purpose_of_use
-NPI : National Provider Identifier - npi (optional - required for treatment based queries)
-City - address_city 
-State - address_state 
-Address - address_lines (optional - success rate increase of ~30%)
-Phone - telephone (optional)
-Social Security Number - ssn (optional)</p>
+<p>-First Name - family_name
+-Last Name - given_name
+-Date of Birth - date_of_birth
+-Zip - postal_code - postal_code
+-Gender - gender
+-Purpose Of Use - purpose_of_use
+-NPI : National Provider Identifier - npi (optional - required for treatment based queries)
+-City - address_city 
+-State - address_state 
+-Address - address_lines (optional - success rate increase of ~30%)
+-Phone - telephone (optional)
+-Social Security Number - ssn (optional)</p>
 
 <p>Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. </p>
 
