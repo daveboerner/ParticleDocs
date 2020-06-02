@@ -61,15 +61,17 @@ var headers = {
 
 > Make sure to replace `token` with your API key.
 
-Particle uses API keys to allow access to the API.  <a href='mailto:go@particlehealth.com'>Request a developer key</a> 
-
-Particle expects for the API key to be included in all API requests to the server in a header that looks like the following:
+When making requests to the Particle API, the data seeker must include an authorization token in the HTTP Header of the request like:
 
 `Authorization: token`
 
 <aside class="notice">
 You must replace <code>token</code> with your personal API key.
 </aside>
+
+Only accredited data seekers will be credentialed to perform queries against the Particle network.
+
+<a href='mailto:go@particlehealth.com'>Request a developer key</a> 
 
 # Clinical API Operations
 
@@ -516,7 +518,22 @@ file_id | The ID of the file to request
 
 # Architecture
 
-By simply requesting information with a minimum set of demographic parameters, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. 
+By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. 
+
+The demographics to include in the initial POST operation body include:
+
+First Name - family_name
+Last Name - given_name
+Date of Birth - date_of_birth
+Zip - postal_code - postal_code
+Gender - gender
+Purpose Of Use - purpose_of_use
+NPI : National Provider Identifier - npi (optional - required for treatment based queries)
+City - address_city 
+State - address_state 
+Address - address_lines (optional - success rate increase of ~30%)
+Phone - telephone (optional)
+Social Security Number - ssn (optional)
     
 Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. 
 
