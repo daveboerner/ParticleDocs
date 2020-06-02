@@ -193,7 +193,7 @@ var data = {
 ### Body Payload
 
 
-``` 
+`
 {
   "address_city": "Cambridge",
   "address_lines": 
@@ -213,7 +213,7 @@ var data = {
   "ssn": "123-45-6789",
   "telephone": "1-234-567-8910"
 }
-```
+`
 
 
 <aside class="success">
