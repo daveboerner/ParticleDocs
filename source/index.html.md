@@ -524,8 +524,8 @@ By simply requesting information with a minimum set of demographic information, 
 
 The demographics to include in the initial POST operation body include:
 
-- First Name - family_name
-- Last Name - given_name
+- Last Name - family_name
+- First Name - given_name
 - Date of Birth - date_of_birth
 - Zip - postal_code - postal_code
 - Gender - gender
