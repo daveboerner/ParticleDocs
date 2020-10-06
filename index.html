@@ -226,12 +226,12 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#clinical-api-operations" class="toc-h1 toc-link" data-title="Clinical API Operations">Clinical API Operations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#body-payload" class="toc-h2 toc-link" data-title="Body Payload">Body Payload</a>
+                    <a href="#post-demographics" class="toc-h2 toc-link" data-title="POST Demographics">POST Demographics</a>
                   </li>
                   <li>
                     <a href="#get-status-of-all-queries" class="toc-h2 toc-link" data-title="GET status of all Queries">GET status of all Queries</a>
@@ -255,14 +255,14 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href="<%= config[:PORTAL_DOMAIN] %>/signup" target="_top">Go to Portal</a></li>
+            <li><a href='mailto:go@particlehealth.com'>Request a developer key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Particle Health supports a RESTful Web Service based off the FHIR and C-CDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p></p>
+<p>ABC Particle Health supports a RESTful Web Service based off the FHIR and CCDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p></p>
 
 <p>We have language bindings in Shell, JavaScript and Python! You can view code examples in the dark area to the right, just select the tab of your prefered language.</p>
 <h1 id='authentication'>Authentication</h1>
@@ -304,7 +304,7 @@ You must replace <code>token</code> with your personal API key.
 
 <p>Only accredited data seekers will be credentialed to perform queries against the Particle network.</p>
 
-<p><a href="<%= config[:PORTAL_DOMAIN] %>/signup&quot; target=&quot;_top&quot;&gt;Go to Portal</a> </p>
+<p><a href='mailto:go@particlehealth.com'>Request a developer key</a> </p>
 <h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
 <!--
 ```ruby
@@ -320,18 +320,19 @@ api.kittens.get
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"address_city"</span><span class="p">:</span> <span class="s">"Berkley"</span><span class="p">,</span>
+    <span class="s">"address_city"</span><span class="p">:</span> <span class="s">"Cambridge"</span><span class="p">,</span>
     <span class="s">"address_lines"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s">"237 Hegmann Avenue"</span>
+      <span class="s">"123 Main St"</span><span class="p">,</span>
+      <span class="s">"Apt 4"</span>
     <span class="p">],</span>
-    <span class="s">"address_state"</span><span class="p">:</span> <span class="s">"MA"</span><span class="p">,</span>
-    <span class="s">"date_of_birth"</span><span class="p">:</span> <span class="s">"1981-07-12"</span><span class="p">,</span>
-    <span class="s">"email"</span><span class="p">:</span> <span class="s">"Federico@doe.com"</span><span class="p">,</span>
-    <span class="s">"family_name"</span><span class="p">:</span> <span class="s">"Aufderhar"</span><span class="p">,</span>
-    <span class="s">"gender"</span><span class="p">:</span> <span class="s">"Male"</span><span class="p">,</span>
-    <span class="s">"given_name"</span><span class="p">:</span> <span class="s">"Federico"</span><span class="p">,</span>
-    <span class="s">"npi"</span><span class="p">:</span> <span class="s">"1234"</span><span class="p">,</span>
-    <span class="s">"postal_code"</span><span class="p">:</span> <span class="s">"02779"</span><span class="p">,</span>
+    <span class="s">"address_state"</span><span class="p">:</span> <span class="s">"Massachusetts"</span><span class="p">,</span>
+    <span class="s">"date_of_birth"</span><span class="p">:</span> <span class="s">"1966-01-18"</span><span class="p">,</span>
+    <span class="s">"email"</span><span class="p">:</span> <span class="s">"john@doe.com"</span><span class="p">,</span>
+    <span class="s">"family_name"</span><span class="p">:</span> <span class="s">"Hermiston"</span><span class="p">,</span>
+    <span class="s">"gender"</span><span class="p">:</span> <span class="s">"FEMALE"</span><span class="p">,</span>
+    <span class="s">"given_name"</span><span class="p">:</span> <span class="s">"Ariel"</span><span class="p">,</span>
+    <span class="s">"npi"</span><span class="p">:</span> <span class="s">"9876"</span><span class="p">,</span>
+    <span class="s">"postal_code"</span><span class="p">:</span> <span class="s">"02138"</span><span class="p">,</span>
     <span class="s">"purpose_of_use"</span><span class="p">:</span> <span class="s">"TREATMENT"</span><span class="p">,</span>
     <span class="s">"ssn"</span><span class="p">:</span> <span class="s">"123-45-6789"</span><span class="p">,</span>
     <span class="s">"telephone"</span><span class="p">:</span> <span class="s">"1-234-567-8910"</span>
@@ -339,7 +340,7 @@ api.kittens.get
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Berkley</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">237 Hegmann Avenue</span><span class="se">\"</span><span class="s2">],</span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MA</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1981-07-12</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico@doe.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Aufderhar</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Male</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1234</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">02779</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{ </span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Cambridge</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">: [ </span><span class="se">\"</span><span class="s2">123 Main St</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">Apt 4</span><span class="se">\"</span><span class="s2"> ], </span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Massachusetts</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1966-01-18</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">john@doe.com</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Hermiston</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">FEMALE</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Ariel</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">9876</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02138</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">, </span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</span><span class="dl">'</span><span class="p">;</span>
@@ -349,18 +350,19 @@ api.kittens.get
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">address_city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Berkley</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">address_city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Cambridge</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">address_lines</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="dl">"</span><span class="s2">237 Hegmann Avenue</span><span class="dl">"</span>
+      <span class="dl">"</span><span class="s2">123 Main St</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">Apt 4</span><span class="dl">"</span>
     <span class="p">],</span>
-    <span class="dl">"</span><span class="s2">address_state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MA</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1981-07-12</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Federico@doe.com</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">family_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Aufderhar</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Male</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">given_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Federico</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">npi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1234</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">postal_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">address_state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Massachusetts</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1966-01-18</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john@doe.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">family_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hermiston</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">FEMALE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">given_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Ariel</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">npi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">9876</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">postal_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02138</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">purpose_of_use</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TREATMENT</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">ssn</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123-45-6789</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">telephone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1-234-567-8910</span><span class="dl">"</span>
@@ -384,21 +386,21 @@ api.kittens.get
   </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"fdca637c-9ef6-4969-8160-9a1a8a805887"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"demographics"</span><span class="p">:</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berkley"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"237 Hegmann Avenue"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1981-07-12"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico@doe.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aufderhar"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"npi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02779"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-234-567-8910"</span><span class="w">
+      </span><span class="nl">"given_name"</span><span class="p">:</span><span class="s2">"Ariel"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"family_name"</span><span class="p">:</span><span class="s2">"Hermiston"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="s2">"1966-01-18"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"FEMALE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ssn"</span><span class="p">:</span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john@doe.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[</span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Apt 4"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"address_state"</span><span class="p">:</span><span class="s2">"Massachusetts"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_city"</span><span class="p">:</span><span class="s2">"Cambridge"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="s2">"02138"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"telephone"</span><span class="p">:</span><span class="s2">"(234) 567-8910"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"npi"</span><span class="p">:</span><span class="s2">"9876"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="s2">"TREATMENT"</span><span class="w">
     </span><span class="p">},</span><span class="w">
   </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"PENDING"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -407,18 +409,20 @@ api.kittens.get
 <h3 id='body-payload'>Body Payload</h3>
 <p><code>
 {
-  &quot;address_city&quot;: &quot;Berkley&quot;,
-  &quot;address_lines&quot;: [
-    &quot;237 Hegmann Avenue&quot;
+  &quot;address_city&quot;: &quot;Cambridge&quot;,
+  &quot;address_lines&quot;: 
+  [
+    &quot;123 Main St&quot;,
+    &quot;Apt 4&quot;
   ],
-  &quot;address_state&quot;: &quot;MA&quot;,
-  &quot;date_of_birth&quot;: &quot;1981-07-12&quot;,
-  &quot;email&quot;: &quot;Federico@doe.com&quot;,
-  &quot;family_name&quot;: &quot;Aufderhar&quot;,
-  &quot;gender&quot;: &quot;Male&quot;,
-  &quot;given_name&quot;: &quot;Federico&quot;,
-  &quot;npi&quot;: &quot;1234&quot;,
-  &quot;postal_code&quot;: &quot;02779&quot;,
+  &quot;address_state&quot;: &quot;Massachusetts&quot;,
+  &quot;date_of_birth&quot;: &quot;1966-01-18&quot;,
+  &quot;email&quot;: &quot;john@doe.com&quot;,
+  &quot;family_name&quot;: &quot;Hermiston&quot;,
+  &quot;gender&quot;: &quot;FEMALE&quot;,
+  &quot;given_name&quot;: &quot;Ariel&quot;,
+  &quot;npi&quot;: &quot;9876&quot;,
+  &quot;postal_code&quot;: &quot;02138&quot;,
   &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
   &quot;ssn&quot;: &quot;123-45-6789&quot;,
   &quot;telephone&quot;: &quot;1-234-567-8910&quot;
@@ -426,7 +430,7 @@ api.kittens.get
 </code></p>
 
 <aside class="success">
-address_lines is an array with each street line separated by a ,
+address_lines is an array with each street line seperated by a ,
 </aside>
 <h2 id='get-status-of-all-queries'>GET status of all Queries</h2>
 <!--
@@ -472,21 +476,21 @@ api.kittens.get(2)
     </span><span class="s2">"id"</span><span class="err">:</span><span class="s2">"fdca637c-9ef6-4969-8160-9a1a8a805887"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"demographics"</span><span class="err">:</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berkley"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"237 Hegmann Avenue"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1981-07-12"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico@doe.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aufderhar"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"npi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02779"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-234-567-8910"</span><span class="w">
+        </span><span class="nl">"given_name"</span><span class="p">:</span><span class="s2">"Ariel"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"family_name"</span><span class="p">:</span><span class="s2">"Hermiston"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="s2">"1966-01-18"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"FEMALE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ssn"</span><span class="p">:</span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john@doe.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w">
+          </span><span class="p">[</span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Apt 4"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"address_state"</span><span class="p">:</span><span class="s2">"Massachusetts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_city"</span><span class="p">:</span><span class="s2">"Cambridge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="s2">"02138"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="s2">"(234) 567-8910"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"npi"</span><span class="p">:</span><span class="s2">"9876"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="s2">"TREATMENT"</span><span class="w">
       </span><span class="p">},</span><span class="w">
     </span><span class="s2">"state"</span><span class="err">:</span><span class="s2">"COMPLETE"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -539,21 +543,21 @@ api.kittens.delete(2)
     </span><span class="s2">"id"</span><span class="err">:</span><span class="s2">"fdca637c-9ef6-4969-8160-9a1a8a805887"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"demographics"</span><span class="err">:</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berkley"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="s2">"237 Hegmann Avenue"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="nl">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MA"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1981-07-12"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico@doe.com"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aufderhar"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"npi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02779"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-234-567-8910"</span><span class="w">
+        </span><span class="nl">"given_name"</span><span class="p">:</span><span class="s2">"Ariel"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"family_name"</span><span class="p">:</span><span class="s2">"Hermiston"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="s2">"1966-01-18"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"FEMALE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ssn"</span><span class="p">:</span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john@doe.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w">
+          </span><span class="p">[</span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Apt 4"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"address_state"</span><span class="p">:</span><span class="s2">"Massachusetts"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_city"</span><span class="p">:</span><span class="s2">"Cambridge"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="s2">"02138"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"telephone"</span><span class="p">:</span><span class="s2">"(234) 567-8910"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"npi"</span><span class="p">:</span><span class="s2">"9876"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="s2">"TREATMENT"</span><span class="w">
       </span><span class="p">},</span><span class="w">
     </span><span class="s2">"state"</span><span class="err">:</span><span class="s2">"COMPLETE"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"files"</span><span class="err">:</span><span class="w">
@@ -703,7 +707,7 @@ api.kittens.delete(2)
 <li>Last Name - family_name</li>
 <li>First Name - given_name</li>
 <li>Date of Birth - date_of_birth</li>
-<li>Zip - postal_code</li>
+<li>Zip - postal_code - postal_code</li>
 <li>Gender - gender</li>
 <li>Purpose Of Use - purpose_of_use</li>
 <li>NPI : National Provider Identifier - npi (optional - required for treatment based queries)</li>
@@ -716,10 +720,8 @@ api.kittens.delete(2)
 
 <p>Particle has designed this process with security, simplicity and elegance as central tenets. What took numerous coordinated IHE and RESTful queries across numerous networks has been distilled to a simple API to access data across the health ecosystem - regardless of geographic boundaries or vendor systems. </p>
 
-<p>Please visit our <a href="<%= config[:PORTAL_DOMAIN] %>&quot; target=&quot;_top&quot;&gt;developer portal</a>. 
-<a href="images/data-architecture-dd2510cb.svg" data-lightbox="data-architecture.svg" data-title="Particle Health Architecture Diagram">
-  <img src="images/data-architecture-dd2510cb.svg" alt="Particle Health Architecture Diagram" />
-</a></p>
+<p>Please visit our <a href="https://api.particlehealth.com/portal/">developer portal</a>. 
+<img src="images/phdiagram-c194a0de.png" class="logo" alt="Logo" /></p>
 <h1 id='errors'>Errors</h1>
 <!--
 <aside class="notice">
