@@ -711,22 +711,21 @@ api.kittens.delete(2)
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">"address_city"</span><span class="p">:</span> <span class="s">"Berkley"</span><span class="p">,</span>
-    <span class="s">"address_lines"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s">"237 Hegmann Avenue"</span>
-    <span class="p">],</span>
-    <span class="s">"address_state"</span><span class="p">:</span> <span class="s">"MA"</span><span class="p">,</span>
-    <span class="s">"date_of_birth"</span><span class="p">:</span> <span class="s">"1981-07-12"</span><span class="p">,</span>
-    <span class="s">"email"</span><span class="p">:</span> <span class="s">"Federico@doe.com"</span><span class="p">,</span>
-    <span class="s">"family_name"</span><span class="p">:</span> <span class="s">"Aufderhar"</span><span class="p">,</span>
-    <span class="s">"gender"</span><span class="p">:</span> <span class="s">"Male"</span><span class="p">,</span>
-    <span class="s">"given_name"</span><span class="p">:</span> <span class="s">"Federico"</span><span class="p">,</span>
-    <span class="s">"npi"</span><span class="p">:</span> <span class="s">"1234"</span><span class="p">,</span>
-    <span class="s">"postal_code"</span><span class="p">:</span> <span class="s">"02779"</span><span class="p">,</span>
-    <span class="s">"purpose_of_use"</span><span class="p">:</span> <span class="s">"TREATMENT"</span><span class="p">,</span>
-    <span class="s">"ssn"</span><span class="p">:</span> <span class="s">"123-45-6789"</span><span class="p">,</span>
-    <span class="s">"telephone"</span><span class="p">:</span> <span class="s">"1-234-567-8910"</span>
-  <span class="p">}</span>
+  <span class="p">{</span>
+  <span class="s">"resourceType"</span><span class="p">:</span> <span class="s">"Person"</span><span class="p">,</span>
+  <span class="s">"name"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">"family"</span><span class="p">:</span> <span class="s">"Aufderhar"</span><span class="p">,</span>
+    <span class="s">"given"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Federico"</span><span class="p">]</span>
+  <span class="p">}],</span>
+  <span class="s">"gender"</span><span class="p">:</span> <span class="s">"MALE"</span><span class="p">,</span>
+  <span class="s">"birthDate"</span><span class="p">:</span> <span class="s">"1981-07-12"</span><span class="p">,</span>
+  <span class="s">"address"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">"city"</span><span class="p">:</span> <span class="s">"Berkley"</span><span class="p">,</span>
+    <span class="s">"state"</span><span class="p">:</span> <span class="s">"MA"</span><span class="p">,</span>
+    <span class="s">"postalCode"</span><span class="p">:</span> <span class="s">"02779"</span>
+  <span class="p">}]</span>
+  <span class="p">}</span>  
+<span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
