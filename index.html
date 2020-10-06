@@ -707,7 +707,7 @@ api.kittens.delete(2)
 </tbody></table>
 <h1 id='fhir-operations'>FHIR Operations</h1><h2 id='post-person-demographics'>POST Person Demographics</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.particlehealth.com/particle-sandbox-api/api/v1/queries'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -729,32 +729,44 @@ api.kittens.delete(2)
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Berkley</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">237 Hegmann Avenue</span><span class="se">\"</span><span class="s2">],</span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MA</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1981-07-12</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico@doe.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Aufderhar</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Male</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1234</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">02779</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
+  "</span>resourceType<span class="s2">": "</span>Person<span class="s2">",
+  "</span>name<span class="s2">": [{
+    "</span>family<span class="s2">": "</span>Arteaga<span class="s2">",
+    "</span>given<span class="s2">": ["</span>Gerardo<span class="s2">"]
+  }],
+  "</span>gender<span class="s2">": "</span>MALE<span class="s2">",
+  "</span>birthDate<span class="s2">": "</span>1973-11-13<span class="s2">",
+  "</span>address<span class="s2">": [{
+    "</span>city<span class="s2">": "</span>New York<span class="s2">",
+    "</span>state<span class="s2">": "</span>NY<span class="s2">",
+    "</span>postalCode<span class="s2">": "</span>01540<span class="s2">"
+  }]
+}"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="dl">"</span><span class="s2">address_city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Berkley</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">address_lines</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="dl">"</span><span class="s2">237 Hegmann Avenue</span><span class="dl">"</span>
-    <span class="p">],</span>
-    <span class="dl">"</span><span class="s2">address_state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MA</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">date_of_birth</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1981-07-12</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Federico@doe.com</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">family_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Aufderhar</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Male</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">given_name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Federico</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">npi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1234</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">postal_code</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">purpose_of_use</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">TREATMENT</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">ssn</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123-45-6789</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">telephone</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1-234-567-8910</span><span class="dl">"</span>
-  <span class="p">}</span>
+  <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">resourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="dl">"</span><span class="s2">family</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Aufderhar</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">given</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Federico</span><span class="dl">"</span><span class="p">]</span>
+  <span class="p">}],</span>
+  <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MALE</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">birthDate</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1981-07-12</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="dl">"</span><span class="s2">city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Berkley</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MA</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">postalCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span>
+  <span class="p">}]</span>
+  <span class="p">}</span>  
+<span class="p">}</span>
   <span class="kd">var</span> <span class="nx">datain</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">datain</span><span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -768,30 +780,9 @@ api.kittens.delete(2)
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON matching the body of the POST as well as a state of pending</p>
+<p>The above command returns JSON matching the body of the POST</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"fdca637c-9ef6-4969-8160-9a1a8a805887"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"demographics"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"address_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berkley"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"address_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"237 Hegmann Avenue"</span><span class="w">
-      </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"address_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1981-07-12"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico@doe.com"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aufderhar"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Federico"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"npi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02779"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"purpose_of_use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ssn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123-45-6789"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-234-567-8910"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"PENDING"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="s2">"Person"</span><span class="p">,</span><span class="nl">"identifier"</span><span class="p">:[],</span><span class="nl">"name"</span><span class="p">:[{</span><span class="nl">"family"</span><span class="p">:</span><span class="s2">"Arteaga"</span><span class="p">,</span><span class="nl">"given"</span><span class="p">:[</span><span class="s2">"Gerardo"</span><span class="p">]}],</span><span class="nl">"telecom"</span><span class="p">:[],</span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"male"</span><span class="p">,</span><span class="nl">"birthDate"</span><span class="p">:</span><span class="s2">"1973-11-13"</span><span class="p">,</span><span class="nl">"address"</span><span class="p">:[{</span><span class="nl">"line"</span><span class="p">:[],</span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"New York"</span><span class="p">,</span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"NY"</span><span class="p">,</span><span class="nl">"postalCode"</span><span class="p">:</span><span class="s2">"01540"</span><span class="p">}],</span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"89b6c26a-4c35-4217-9521-1827f127ae2c"</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
 <h3 id='body-payload-2'>Body Payload</h3>
