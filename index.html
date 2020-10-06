@@ -254,7 +254,13 @@
                     <a href="#post-person-demographics" class="toc-h2 toc-link" data-title="POST Person Demographics">POST Person Demographics</a>
                   </li>
                   <li>
-                    <a href="#get-status-of-all-queries-2" class="toc-h2 toc-link" data-title="GET status of all Queries">GET status of all Queries</a>
+                    <a href="#post-query" class="toc-h2 toc-link" data-title="POST Query">POST Query</a>
+                  </li>
+                  <li>
+                    <a href="#get-patient" class="toc-h2 toc-link" data-title="GET Patient">GET Patient</a>
+                  </li>
+                  <li>
+                    <a href="#get-everything" class="toc-h2 toc-link" data-title="GET Everything">GET Everything</a>
                   </li>
               </ul>
           </li>
@@ -784,32 +790,29 @@ api.kittens.delete(2)
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="s2">"Person"</span><span class="p">,</span><span class="nl">"identifier"</span><span class="p">:[],</span><span class="nl">"name"</span><span class="p">:[{</span><span class="nl">"family"</span><span class="p">:</span><span class="s2">"Arteaga"</span><span class="p">,</span><span class="nl">"given"</span><span class="p">:[</span><span class="s2">"Gerardo"</span><span class="p">]}],</span><span class="nl">"telecom"</span><span class="p">:[],</span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"male"</span><span class="p">,</span><span class="nl">"birthDate"</span><span class="p">:</span><span class="s2">"1973-11-13"</span><span class="p">,</span><span class="nl">"address"</span><span class="p">:[{</span><span class="nl">"line"</span><span class="p">:[],</span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"New York"</span><span class="p">,</span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"NY"</span><span class="p">,</span><span class="nl">"postalCode"</span><span class="p">:</span><span class="s2">"01540"</span><span class="p">}],</span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"89b6c26a-4c35-4217-9521-1827f127ae2c"</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</code></p>
+<p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person</code></p>
 <h3 id='body-payload-2'>Body Payload</h3>
 <p><code>
 {
-  &quot;address_city&quot;: &quot;Berkley&quot;,
-  &quot;address_lines&quot;: [
-    &quot;237 Hegmann Avenue&quot;
-  ],
-  &quot;address_state&quot;: &quot;MA&quot;,
-  &quot;date_of_birth&quot;: &quot;1981-07-12&quot;,
-  &quot;email&quot;: &quot;Federico@doe.com&quot;,
-  &quot;family_name&quot;: &quot;Aufderhar&quot;,
-  &quot;gender&quot;: &quot;Male&quot;,
-  &quot;given_name&quot;: &quot;Federico&quot;,
-  &quot;npi&quot;: &quot;1234&quot;,
-  &quot;postal_code&quot;: &quot;02779&quot;,
-  &quot;purpose_of_use&quot;: &quot;TREATMENT&quot;,
-  &quot;ssn&quot;: &quot;123-45-6789&quot;,
-  &quot;telephone&quot;: &quot;1-234-567-8910&quot;
+  &quot;resourceType&quot;: &quot;Person&quot;,
+  &quot;name&quot;: [{
+    &quot;family&quot;: &quot;Arteaga&quot;,
+    &quot;given&quot;: [&quot;Gerardo&quot;]
+  }],
+  &quot;gender&quot;: &quot;MALE&quot;,
+  &quot;birthDate&quot;: &quot;1973-11-13&quot;,
+  &quot;address&quot;: [{
+    &quot;city&quot;: &quot;New York&quot;,
+    &quot;state&quot;: &quot;NY&quot;,
+    &quot;postalCode&quot;: &quot;01540&quot;
+  }]
 }
 </code></p>
 
 <aside class="success">
 address_lines is an array with each street line seperated by a ,
 </aside>
-<h2 id='get-status-of-all-queries-2'>GET status of all Queries</h2><h1 id='architecture'>Architecture</h1>
+<h2 id='post-query'>POST Query</h2><h2 id='get-patient'>GET Patient</h2><h2 id='get-everything'>GET Everything</h2><h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
 
 <p>The demographics to include in the initial POST operation body include:</p>
