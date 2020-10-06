@@ -19,7 +19,7 @@ search: true
 
 # Introduction
 
-ABC Particle Health supports a RESTful Web Service based off the FHIR and CCDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p>
+ABC XYZ Particle Health supports a RESTful Web Service based off the FHIR and CCDA standards. We expose an API by which verified customers (data seekers) may access health records for over 250M unique patients across the U.S. </p>
 
 We have language bindings in Shell, JavaScript and Python! You can view code examples in the dark area to the right, just select the tab of your prefered language.
 
