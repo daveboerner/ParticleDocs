@@ -228,7 +228,7 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#clinical-api-operations" class="toc-h1 toc-link" data-title="Clinical API Operations">Clinical API Operations</a>
+            <a href="#c-cda-operations" class="toc-h1 toc-link" data-title="C-CDA Operations">C-CDA Operations</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#post-demographics" class="toc-h2 toc-link" data-title="POST Demographics">POST Demographics</a>
@@ -244,6 +244,14 @@
                   </li>
                   <li>
                     <a href="#get-file" class="toc-h2 toc-link" data-title="GET File">GET File</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#fhir-operations" class="toc-h1 toc-link" data-title="FHIR Operations">FHIR Operations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-person-demographics" class="toc-h2 toc-link" data-title="POST Person Demographics">POST Person Demographics</a>
                   </li>
               </ul>
           </li>
@@ -305,7 +313,7 @@ You must replace <code>token</code> with your personal API key.
 <p>Only accredited data seekers will be credentialed to perform queries against the Particle network.</p>
 
 <p><a href='mailto:go@particlehealth.com'>Request a developer key</a> </p>
-<h1 id='clinical-api-operations'>Clinical API Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
+<h1 id='c-cda-operations'>C-CDA Operations</h1><h2 id='post-demographics'>POST Demographics</h2>
 <!--
 ```ruby
 require 'kittn'
@@ -694,7 +702,7 @@ api.kittens.delete(2)
 <td>The ID of the file to request</td>
 </tr>
 </tbody></table>
-<h1 id='architecture'>Architecture</h1>
+<h1 id='fhir-operations'>FHIR Operations</h1><h2 id='post-person-demographics'>POST Person Demographics</h2><h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
 
 <p>The demographics to include in the initial POST operation body include:</p>
