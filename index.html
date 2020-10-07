@@ -873,7 +873,7 @@ api.kittens.delete(2)
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON matching the body of the POST, plus the identifier of Person</p>
+<p>The above command returns JSON matching the body of the POST, plus the identifier of the Person</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
@@ -1019,7 +1019,7 @@ address_lines is an array with each street line seperated by a ,
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON matching the body of the POST</p>
+<p>The above command returns JSON of the Person POST</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
@@ -1074,9 +1074,80 @@ address_lines is an array with each street line seperated by a ,
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns a list of the FHIR resources found so far</p>
+<p>The above command returns a list of the FHIR resources found so far in JSON</p>
 </blockquote>
-<h3 id='http-request-8'>HTTP Request</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"transactionTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-07T18:23:24.410778Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"request"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST /R4/Person/{person_id}/$query"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"requiresAccessToken"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"output"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CarePlan"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/CarePlan/63ea4d31-6ffa-48f1-82b1-5176fdde55fd"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CareTeam"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/CareTeam/45d0e6b2-aa35-4338-95e8-b932dc5c286b"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Claim"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Claim/c2fc9d82-c03e-472f-ab1f-7b517a92cdc3"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Condition/27b6dc4e-14e3-4c0d-ab84-cdfb5215691b"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DiagnosticReport"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/DiagnosticReport/152df185-b0c2-479c-9d3c-7235e2ad6dca"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/7d6ce462-b20d-4943-ab14-6cab050d6b89"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExplanationOfBenefit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/ExplanationOfBenefit/00f78226-1264-48c5-ae43-8c42229f3da4"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MedicationRequest"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/MedicationRequest/40b522db-3c7e-48d1-9d7e-db2fbd928286"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observation"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Observation/3468cd4c-0262-4223-9cbb-7f22bf107b16"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Procedure"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Procedure/1354e56c-421d-49da-9b52-6f09dde8f890"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Claim"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Claim/42d23bf1-31c9-40b7-a0e4-6986ceea20e8"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/29341ce4-aa56-4187-9306-2bf7cd037072"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExplanationOfBenefit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/ExplanationOfBenefit/1bcf6e94-f3ea-427b-b860-b62ece291a8e"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Immunization"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Immunization/a6368796-d425-4b8f-ac14-9a43d481b28f"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Patient/ff9b4154-2819-4416-859e-67ec2064ac6c"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Person/c2dfd7b1-df38-4d80-b1e8-6e44e3bbce7f"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
 <h2 id='get-resources'>GET Resources</h2>
 <p>A search for a resource type and the specified search params. Both type and params are optional. Specifying just a type will return all resources of that type, specifying just params will perform a search across all resource types, and specifying neither will return all resources. Certain search params are supported by all resources (<a href="https://www.hl7.org/fhir/search.html#Summary">FHIR Search</a>), while others are specific to resource types and are documented in the FHIR documentation for that resource type (e.g. <a href="https://www.hl7.org/fhir/encounter.html#search">Encounter Search</a>).</p>
