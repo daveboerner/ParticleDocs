@@ -254,6 +254,9 @@
                     <a href="#post-person" class="toc-h2 toc-link" data-title="POST Person">POST Person</a>
                   </li>
                   <li>
+                    <a href="#post-query" class="toc-h2 toc-link" data-title="POST Query">POST Query</a>
+                  </li>
+                  <li>
                     <a href="#get-query" class="toc-h2 toc-link" data-title="GET Query">GET Query</a>
                   </li>
                   <li>
@@ -957,34 +960,28 @@ api.kittens.delete(2)
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span><span class="err">`</span><span class="w">
+</span></code></pre></div>
+<aside class="success">
+address_lines is an array with each street line seperated by a ,
+</aside>
+<h2 id='post-query'>POST Query</h2>
+<p>A query operation with a body containing the purpose of use and NPI. The query operation is run after it is posted and the Person ID will be returned along with a URL for checking the status of the query. Only Person resources may be queried.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+<span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">"resourceType"</span><span class="p">:</span> <span class="s">"Parameters"</span><span class="p">,</span>
+  <span class="s">"parameter"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"purpose"</span><span class="p">,</span>
+    <span class="s">"valueString"</span><span class="p">:</span> <span class="s">"TREATMENT"</span>
+  <span class="p">}]</span>
+<span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
-</span><span class="err">&lt;aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
-</span><span class="err">address_lines</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">street</span><span class="w"> </span><span class="err">line</span><span class="w"> </span><span class="err">seperated</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">,</span><span class="w">
-</span><span class="err">&lt;/aside&gt;</span><span class="w">
-
-</span><span class="err">##</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">Query</span><span class="w">
-
-</span><span class="err">A</span><span class="w"> </span><span class="err">query</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">body</span><span class="w"> </span><span class="err">containing</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">purpose</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">use</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">NPI.</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">query</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">run</span><span class="w"> </span><span class="err">after</span><span class="w"> </span><span class="err">it</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">posted</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">Person</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">along</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">checking</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">status</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">query.</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">Person</span><span class="w"> </span><span class="err">resources</span><span class="w"> </span><span class="err">may</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">queried.</span><span class="w">
-
-</span><span class="err">```python</span><span class="w">
-</span><span class="err">import</span><span class="w"> </span><span class="err">requests</span><span class="w">
-
-</span><span class="err">url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R</span><span class="mi">4</span><span class="err">/Person/</span><span class="p">{</span><span class="err">person_id</span><span class="p">}</span><span class="err">/$query'</span><span class="w">
-</span><span class="err">headers</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="nl">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-</span><span class="err">'Authorization':</span><span class="w"> </span><span class="err">'token'</span><span class="p">}</span><span class="w">
-</span><span class="err">data</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"purpose"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TREATMENT"</span><span class="w">
-  </span><span class="p">}]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="err">r</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">requests.post(url,</span><span class="w"> </span><span class="err">headers=headers,</span><span class="w"> </span><span class="err">json=data)</span><span class="w">
-
-</span><span class="err">print(r.json())</span><span class="w">
-</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
   "</span>resourceType<span class="s2">": "</span>Parameters<span class="s2">",
   "</span>parameter<span class="s2">": [{
     "</span>name<span class="s2">": "</span>purpose<span class="s2">",
