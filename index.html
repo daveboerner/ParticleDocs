@@ -257,10 +257,10 @@
                     <a href="#post-query" class="toc-h2 toc-link" data-title="POST Query">POST Query</a>
                   </li>
                   <li>
-                    <a href="#get-patient" class="toc-h2 toc-link" data-title="GET Patient">GET Patient</a>
+                    <a href="#get-everything" class="toc-h2 toc-link" data-title="GET Everything">GET Everything</a>
                   </li>
                   <li>
-                    <a href="#get-everything" class="toc-h2 toc-link" data-title="GET Everything">GET Everything</a>
+                    <a href="#get-everything-2" class="toc-h2 toc-link" data-title="GET Everything">GET Everything</a>
                   </li>
               </ul>
           </li>
@@ -641,10 +641,10 @@ api.kittens.delete(2)
 <p>This endpoint retrieves all files associated with a query as a zip file for download.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-values'>URL Values</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -695,10 +695,10 @@ api.kittens.delete(2)
 <p>This endpoint retrieves a specified file found for the patient.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-values-2'>URL Values</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -881,7 +881,38 @@ address_lines is an array with each street line seperated by a ,
   }]
 }
 </code></p>
-<h2 id='get-patient'>GET Patient</h2><h2 id='get-everything'>GET Everything</h2><h1 id='architecture'>Architecture</h1>
+<h2 id='get-everything'>GET Everything</h2>
+<p>A query operation and its status. 202 Accepted is returned for queries that are still in progress along with the status of the query in the “X-Progress” HTTP header. A list of the FHIR resources found so far will also be returned in the body for queries in progress. 200 Success is returned for queries that have successfully completed along with the complete list of found resources in the body. 500 Internal Server Error is returned for queries which have failed and includes details about the failure in the body. Only Person resources may have their query status checked.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// Do something with the returned data.</span>
+<span class="p">});</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns a list of the FHIR resources found so far</p>
+</blockquote>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</code></p>
+<h2 id='get-everything-2'>GET Everything</h2><h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
 
 <p>The demographics to include in the initial POST operation body include:</p>
