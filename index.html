@@ -1177,9 +1177,92 @@ address_lines is an array with each street line seperated by a ,
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns a list of the FHIR resources of the type requested, filtered by the parameters passed.v</p>
+<p>The above command returns a list of the FHIR resources of the type requested, filtered by the parameters passed.</p>
 </blockquote>
-<h3 id='http-request-9'>HTTP Request</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/b36a82c2-d47a-4754-8a89-8a2accff5791"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b36a82c2-d47a-4754-8a89-8a2accff5791"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/29341ce4-aa56-4187-9306-2bf7cd037072"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29341ce4-aa56-4187-9306-2bf7cd037072"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/c1f4dcbd-ef23-4cc3-aa94-b4af7620c63e"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1f4dcbd-ef23-4cc3-aa94-b4af7620c63e"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/fc102328-6a80-441e-bc47-06283d0279e4"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc102328-6a80-441e-bc47-06283d0279e4"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/f4f48def-85ef-4b2d-ad69-296a2b822e05"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4f48def-85ef-4b2d-ad69-296a2b822e05"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/d498f919-39c8-4f8c-95af-bb7ea37d16fa"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d498f919-39c8-4f8c-95af-bb7ea37d16fa"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"fullUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/7d6ce462-b20d-4943-ab14-6cab050d6b89"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d6ce462-b20d-4943-ab14-6cab050d6b89"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"search"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"match"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"relation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"search"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/R4/Encounter/?patient=9129ce46-aec8-4dac-baeb-09def17e41c8%2Cff9b4154-2819-4416-859e-67ec2064ac6c"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={person_id}</code></p>
 <h3 id='parameter-values'>Parameter Values</h3>
 <table><thead>
