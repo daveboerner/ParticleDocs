@@ -724,36 +724,90 @@ api.kittens.delete(2)
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">{</span>
-  <span class="s">"resourceType"</span><span class="p">:</span> <span class="s">"Person"</span><span class="p">,</span>
-  <span class="s">"name"</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="s">"family"</span><span class="p">:</span> <span class="s">"Aufderhar"</span><span class="p">,</span>
-    <span class="s">"given"</span><span class="p">:</span> <span class="p">[</span><span class="s">"Federico"</span><span class="p">]</span>
-  <span class="p">}],</span>
-  <span class="s">"gender"</span><span class="p">:</span> <span class="s">"MALE"</span><span class="p">,</span>
-  <span class="s">"birthDate"</span><span class="p">:</span> <span class="s">"1981-07-12"</span><span class="p">,</span>
-  <span class="s">"address"</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="s">"city"</span><span class="p">:</span> <span class="s">"Berkley"</span><span class="p">,</span>
-    <span class="s">"state"</span><span class="p">:</span> <span class="s">"MA"</span><span class="p">,</span>
-    <span class="s">"postalCode"</span><span class="p">:</span> <span class="s">"02779"</span>
-  <span class="p">}]</span>
-  <span class="p">}</span>  
+    <span class="s">"resourceType"</span><span class="p">:</span> <span class="s">"Person"</span><span class="p">,</span>
+    <span class="s">"identifier"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"type"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">"text"</span><span class="p">:</span> <span class="s">"ssn"</span>
+            <span class="p">},</span>
+            <span class="s">"value"</span><span class="p">:</span> <span class="s">"123-45-6789"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"family"</span><span class="p">:</span> <span class="s">"Aufderhar"</span><span class="p">,</span>
+            <span class="s">"given"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">"Federico"</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"telecom"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"system"</span><span class="p">:</span> <span class="s">"phone"</span><span class="p">,</span>
+            <span class="s">"value"</span><span class="p">:</span> <span class="s">"123-456-7891"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s">"system"</span><span class="p">:</span> <span class="s">"email"</span><span class="p">,</span>
+            <span class="s">"value"</span><span class="p">:</span> <span class="s">"Federico@doe.com"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s">"gender"</span><span class="p">:</span> <span class="s">"male"</span><span class="p">,</span>
+    <span class="s">"birthDate"</span><span class="p">:</span> <span class="s">"1981-07-12"</span><span class="p">,</span>
+    <span class="s">"address"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s">"line"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s">"237 Hegmann Avenue"</span>
+            <span class="p">],</span>
+            <span class="s">"city"</span><span class="p">:</span> <span class="s">"Berkley"</span><span class="p">,</span>
+            <span class="s">"state"</span><span class="p">:</span> <span class="s">"MA"</span><span class="p">,</span>
+            <span class="s">"postalCode"</span><span class="p">:</span> <span class="s">"02779"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>  
 <span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
-  "</span>resourceType<span class="s2">": "</span>Person<span class="s2">",
-  "</span>name<span class="s2">": [{
-    "</span>family<span class="s2">": "</span>Arteaga<span class="s2">",
-    "</span>given<span class="s2">": ["</span>Gerardo<span class="s2">"]
-  }],
-  "</span>gender<span class="s2">": "</span>MALE<span class="s2">",
-  "</span>birthDate<span class="s2">": "</span>1973-11-13<span class="s2">",
-  "</span>address<span class="s2">": [{
-    "</span>city<span class="s2">": "</span>New York<span class="s2">",
-    "</span>state<span class="s2">": "</span>NY<span class="s2">",
-    "</span>postalCode<span class="s2">": "</span>01540<span class="s2">"
-  }]
+    "</span>resourceType<span class="s2">": "</span>Person<span class="s2">",
+    "</span>identifier<span class="s2">": [
+        {
+            "</span><span class="nb">type</span><span class="s2">": {
+                "</span>text<span class="s2">": "</span>ssn<span class="s2">"
+            },
+            "</span>value<span class="s2">": "</span>123-45-6789<span class="s2">"
+        }
+    ],
+    "</span>name<span class="s2">": [
+        {
+            "</span>family<span class="s2">": "</span>Aufderhar<span class="s2">",
+            "</span>given<span class="s2">": [
+                "</span>Federico<span class="s2">"
+            ]
+        }
+    ],
+    "</span>telecom<span class="s2">": [
+        {
+            "</span>system<span class="s2">": "</span>phone<span class="s2">",
+            "</span>value<span class="s2">": "</span>123-456-7891<span class="s2">"
+        },
+        {
+            "</span>system<span class="s2">": "</span>email<span class="s2">",
+            "</span>value<span class="s2">": "</span>Federico@doe.com<span class="s2">"
+        }
+    ],
+    "</span>gender<span class="s2">": "</span>male<span class="s2">",
+    "</span>birthDate<span class="s2">": "</span>1981-07-12<span class="s2">",
+    "</span>address<span class="s2">": [
+        {
+            "</span>line<span class="s2">": [
+                "</span>237 Hegmann Avenue<span class="s2">"
+            ],
+            "</span>city<span class="s2">": "</span>Berkley<span class="s2">",
+            "</span>state<span class="s2">": "</span>MA<span class="s2">",
+            "</span>postalCode<span class="s2">": "</span>02779<span class="s2">"
+        }
+    ]
 }"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
@@ -765,19 +819,46 @@ api.kittens.delete(2)
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">{</span>
-  <span class="dl">"</span><span class="s2">resourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="dl">"</span><span class="s2">family</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Aufderhar</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">given</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Federico</span><span class="dl">"</span><span class="p">]</span>
-  <span class="p">}],</span>
-  <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MALE</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">birthDate</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1981-07-12</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
-    <span class="dl">"</span><span class="s2">city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Berkley</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MA</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">postalCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span>
-  <span class="p">}]</span>
-  <span class="p">}</span>  
+    <span class="dl">"</span><span class="s2">resourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">identifier</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">text</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ssn</span><span class="dl">"</span>
+            <span class="p">},</span>
+            <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123-45-6789</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">family</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Aufderhar</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">given</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="dl">"</span><span class="s2">Federico</span><span class="dl">"</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">telecom</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">system</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">phone</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">123-456-7891</span><span class="dl">"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">system</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Federico@doe.com</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">gender</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">birthDate</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1981-07-12</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">line</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="dl">"</span><span class="s2">237 Hegmann Avenue</span><span class="dl">"</span>
+            <span class="p">],</span>
+            <span class="dl">"</span><span class="s2">city</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Berkley</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">state</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MA</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">postalCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span> 
 <span class="p">}</span>
   <span class="kd">var</span> <span class="nx">datain</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">datain</span><span class="p">})</span>
