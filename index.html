@@ -251,13 +251,13 @@
             <a href="#fhir-operations" class="toc-h1 toc-link" data-title="FHIR Operations">FHIR Operations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post-person-demographics" class="toc-h2 toc-link" data-title="POST Person Demographics">POST Person Demographics</a>
+                    <a href="#post-person" class="toc-h2 toc-link" data-title="POST Person">POST Person</a>
                   </li>
                   <li>
                     <a href="#post-query" class="toc-h2 toc-link" data-title="POST Query">POST Query</a>
                   </li>
                   <li>
-                    <a href="#get-everything" class="toc-h2 toc-link" data-title="GET Everything">GET Everything</a>
+                    <a href="#get-query" class="toc-h2 toc-link" data-title="GET Query">GET Query</a>
                   </li>
                   <li>
                     <a href="#get-resources" class="toc-h2 toc-link" data-title="GET Resources">GET Resources</a>
@@ -715,7 +715,7 @@ api.kittens.delete(2)
 <td>The ID of the file to request</td>
 </tr>
 </tbody></table>
-<h1 id='fhir-operations'>FHIR Operations</h1><h2 id='post-person-demographics'>POST Person Demographics</h2>
+<h1 id='fhir-operations'>FHIR Operations</h1><h2 id='post-person'>POST Person</h2>
 <p>The Person resource will be created by the server and will be returned in the body of the response along with the ID generated for the Person resource. Creating resources is limited to the Person resource, all other FHIR resources are created automatically by querying a Person resource for their healthcare data.</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
@@ -885,7 +885,7 @@ address_lines is an array with each street line seperated by a ,
   }]
 }
 </code></p>
-<h2 id='get-everything'>GET Everything</h2>
+<h2 id='get-query'>GET Query</h2>
 <p>A query operation and its status. 202 Accepted is returned for queries that are still in progress along with the status of the query in the “X-Progress” HTTP header. A list of the FHIR resources found so far will also be returned in the body for queries in progress. 200 Success is returned for queries that have successfully completed along with the complete list of found resources in the body. 500 Internal Server Error is returned for queries which have failed and includes details about the failure in the body. Only Person resources may have their query status checked.</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
