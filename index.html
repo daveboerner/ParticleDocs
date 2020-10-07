@@ -591,10 +591,10 @@ api.kittens.delete(2)
 <p>This endpoint retrieves all file pointers associated with a query.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/{query_id}</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='url-values'>URL Values</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Value</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -645,7 +645,7 @@ api.kittens.delete(2)
 <p>This endpoint retrieves all files associated with a query as a zip file for download.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip</code></p>
-<h3 id='url-values'>URL Values</h3>
+<h3 id='url-values-2'>URL Values</h3>
 <table><thead>
 <tr>
 <th>Value</th>
@@ -699,7 +699,7 @@ api.kittens.delete(2)
 <p>This endpoint retrieves a specified file found for the patient.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}</code></p>
-<h3 id='url-values-2'>URL Values</h3>
+<h3 id='url-values-3'>URL Values</h3>
 <table><thead>
 <tr>
 <th>Value</th>
@@ -1036,6 +1036,18 @@ address_lines is an array with each street line seperated by a ,
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
+<h3 id='url-values-4'>URL Values</h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>person_id</td>
+<td>The ID of the person to request resources from</td>
+</tr>
+</tbody></table>
 <h3 id='body-payload-3'>Body Payload</h3>
 <p><code>
 {
@@ -1149,6 +1161,18 @@ address_lines is an array with each street line seperated by a ,
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
+<h3 id='url-values-5'>URL Values</h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>person_id</td>
+<td>The ID of the person to request resources from</td>
+</tr>
+</tbody></table>
 <h2 id='get-resources'>GET Resources</h2>
 <p>A search for a resource type and the specified search params. Both type and params are optional. Specifying just a type will return all resources of that type, specifying just params will perform a search across all resource types, and specifying neither will return all resources. Certain search params are supported by all resources (<a href="https://www.hl7.org/fhir/search.html#Summary">FHIR Search</a>), while others are specific to resource types and are documented in the FHIR documentation for that resource type (e.g. <a href="https://www.hl7.org/fhir/encounter.html#search">Encounter Search</a>).</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
@@ -1369,6 +1393,18 @@ address_lines is an array with each street line seperated by a ,
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/{resource_id}</code></p>
+<h3 id='url-values-6'>URL Values</h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resource_id</td>
+<td>The ID of the resource requested</td>
+</tr>
+</tbody></table>
 <h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
 
