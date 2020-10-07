@@ -873,7 +873,7 @@ api.kittens.delete(2)
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON matching the body of the POST</p>
+<p>The above command returns JSON matching the body of the POST, plus the identifier of Person</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
@@ -915,7 +915,7 @@ api.kittens.delete(2)
             </span><span class="nl">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02779"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c2dfd7b1-df38-4d80-b1e8-6e44e3bbce7f"</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"person_id"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person</code></p>
@@ -1021,7 +1021,19 @@ address_lines is an array with each street line seperated by a ,
 <blockquote>
 <p>The above command returns JSON matching the body of the POST</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="s2">"Parameters"</span><span class="p">,</span><span class="nl">"parameter"</span><span class="p">:[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"id"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"162c571e-d176-4920-9b9a-f14b5e033f7c"</span><span class="p">},{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"status"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"http://api.particlehealth.com/R4/Person/{person_id/$query"</span><span class="p">}]}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"person_id"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.particlehealth.com/R4/Person/{person_id}/$query"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
 <h3 id='body-payload-3'>Body Payload</h3>
