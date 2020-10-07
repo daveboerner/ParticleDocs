@@ -620,7 +620,7 @@ api.kittens.delete(2)
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip.com/particle-sandbox-api/api/v1/queries/</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/zip</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
@@ -821,7 +821,7 @@ address_lines is an array with each street line seperated by a ,
 <p>A query operation with a body containing the purpose of use and NPI. The query operation is run after it is posted and the Person ID will be returned along with a URL for checking the status of the query. Only Person resources may be queried.</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -834,7 +834,7 @@ address_lines is an array with each street line seperated by a ,
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
   "</span>resourceType<span class="s2">": "</span>Parameters<span class="s2">",
   "</span>parameter<span class="s2">": [{
     "</span>name<span class="s2">": "</span>purpose<span class="s2">",
@@ -843,7 +843,7 @@ address_lines is an array with each street line seperated by a ,
 }"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
@@ -871,9 +871,9 @@ address_lines is an array with each street line seperated by a ,
 <blockquote>
 <p>The above command returns JSON matching the body of the POST</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="s2">"Parameters"</span><span class="p">,</span><span class="nl">"parameter"</span><span class="p">:[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"id"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"162c571e-d176-4920-9b9a-f14b5e033f7c"</span><span class="p">},{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"status"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"http://api.particlehealth.com/R4/Person/{PersonId}/$query"</span><span class="p">}]}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"resourceType"</span><span class="p">:</span><span class="s2">"Parameters"</span><span class="p">,</span><span class="nl">"parameter"</span><span class="p">:[{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"id"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"162c571e-d176-4920-9b9a-f14b5e033f7c"</span><span class="p">},{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"status"</span><span class="p">,</span><span class="nl">"valueString"</span><span class="p">:</span><span class="s2">"http://api.particlehealth.com/R4/Person/{person_id/$query"</span><span class="p">}]}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</code></p>
+<p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
 <h3 id='body-payload-3'>Body Payload</h3>
 <p><code>
 {
@@ -888,13 +888,13 @@ address_lines is an array with each street line seperated by a ,
 <p>A query operation and its status. 202 Accepted is returned for queries that are still in progress along with the status of the query in the “X-Progress” HTTP header. A list of the FHIR resources found so far will also be returned in the body for queries in progress. 200 Success is returned for queries that have successfully completed along with the complete list of found resources in the body. 500 Internal Server Error is returned for queries which have failed and includes details about the failure in the body. Only Person resources may have their query status checked.</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
 <span class="p">}</span>
@@ -914,12 +914,53 @@ address_lines is an array with each street line seperated by a ,
 <p>The above command returns a list of the FHIR resources found so far</p>
 </blockquote>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{PersonId}/$query</code></p>
+<p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</code></p>
 <h2 id='get-resources'>GET Resources</h2>
-<p>A search for a resource type and the specified search params. Both type and params are optional. Specifying just a type will return all resources of that type, specifying just params will perform a search across all resource types, and specifying neither will return all resources. Certain search params are supported by all resources (https://www.hl7.org/fhir/search.html#Summary), while others are specific to resource types and are documented in the FHIR documentation for that resource type (e.g. https://www.hl7.org/fhir/encounter.html#search).</p>
+<p>A search for a resource type and the specified search params. Both type and params are optional. Specifying just a type will return all resources of that type, specifying just params will perform a search across all resource types, and specifying neither will return all resources. Certain search params are supported by all resources (<a href="https://www.hl7.org/fhir/search.html#Summary">FHIR Search</a>), while others are specific to resource types and are documented in the FHIR documentation for that resource type (e.g. <a href="https://www.hl7.org/fhir/encounter.html#search">Encounter Search</a>).</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={PersonId}'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={person_id}'</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={person_id}'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={person_id}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+  <span class="c1">// Do something with the returned data.</span>
+<span class="p">});</span>
+
+
+</code></pre></div>
+<blockquote>
+<p>The above command returns a list of the FHIR resources of the type requested, filtered by the parameters passed.v</p>
+</blockquote>
+<h3 id='parameter-values'>Parameter Values</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>person_id</td>
+<td>The ID of the person to filter returned resources upon</td>
+</tr>
+</tbody></table>
+<h2 id='get-resource'>GET Resource</h2>
+<p>A single FHIR resource specified by type and id. The entirety of the FHIR resource will be returned in the body of the response.</p>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={person_id}'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/?person={PersonId}'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
@@ -942,9 +983,9 @@ address_lines is an array with each street line seperated by a ,
 
 </code></pre></div>
 <blockquote>
-<p>The above command returns a list of the FHIR resources of the type requested, filtered by the parameters passed.</p>
+<p>The above command returns a single FHIR resource of the type requested and specified by the id.</p>
 </blockquote>
-<h2 id='get-resource'>GET Resource</h2><h1 id='architecture'>Architecture</h1>
+<h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
 
 <p>The demographics to include in the initial POST operation body include:</p>
