@@ -800,18 +800,45 @@ api.kittens.delete(2)
 <h3 id='body-payload-2'>Body Payload</h3>
 <p><code>
 {
-  &quot;resourceType&quot;: &quot;Person&quot;,
-  &quot;name&quot;: [{
-    &quot;family&quot;: &quot;Arteaga&quot;,
-    &quot;given&quot;: [&quot;Gerardo&quot;]
-  }],
-  &quot;gender&quot;: &quot;MALE&quot;,
-  &quot;birthDate&quot;: &quot;1973-11-13&quot;,
-  &quot;address&quot;: [{
-    &quot;city&quot;: &quot;New York&quot;,
-    &quot;state&quot;: &quot;NY&quot;,
-    &quot;postalCode&quot;: &quot;01540&quot;
-  }]
+    &quot;resourceType&quot;: &quot;Person&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;type&quot;: {
+                &quot;text&quot;: &quot;ssn&quot;
+            },
+            &quot;value&quot;: &quot;123-45-6789&quot;
+        }
+    ],
+    &quot;name&quot;: [
+        {
+            &quot;family&quot;: &quot;Aufderhar&quot;,
+            &quot;given&quot;: [
+                &quot;Federico&quot;
+            ]
+        }
+    ],
+    &quot;telecom&quot;: [
+        {
+            &quot;system&quot;: &quot;phone&quot;,
+            &quot;value&quot;: &quot;123-456-7891&quot;
+        },
+        {
+            &quot;system&quot;: &quot;email&quot;,
+            &quot;value&quot;: &quot;Federico@doe.com&quot;
+        }
+    ],
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;birthDate&quot;: &quot;1981-07-12&quot;,
+    &quot;address&quot;: [
+        {
+            &quot;line&quot;: [
+                &quot;237 Hegmann Avenue&quot;
+            ],
+            &quot;city&quot;: &quot;Berkley&quot;,
+            &quot;state&quot;: &quot;MA&quot;,
+            &quot;postalCode&quot;: &quot;02779&quot;
+        }
+    ]
 }
 </code></p>
 
