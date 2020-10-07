@@ -1306,7 +1306,68 @@ address_lines is an array with each street line seperated by a ,
 <blockquote>
 <p>The above command returns a single FHIR resource of the type requested and specified by the id.</p>
 </blockquote>
-<h3 id='http-request-10'>HTTP Request</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"class"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMB"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ActCode"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b36a82c2-d47a-4754-8a89-8a2accff5791"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-07T18:23:27.973479+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MTYwMjA5NTAwNzk3MzQ3OTAwMA"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"participant"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"individual"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. María Eugenia578 Quesada500"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Practitioner/9ae62cad-dc89-4de9-bca3-05d263281ef8"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-27T02:54:42-04:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-27T02:39:42-04:00"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PPRF"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"primary performer"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/v3-ParticipationType"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"primary performer"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-27T02:54:42-04:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-27T02:39:42-04:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Encounter"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"serviceProvider"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PCP155636"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization/f476af40-84b8-4fd0-b842-537fbcbb5873"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"finished"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Federico589 Aufderhar910"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient/ff9b4154-2819-4416-859e-67ec2064ac6c"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"162673000"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General examination of patient (procedure)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General examination of patient (procedure)"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Encounter/{resource_id}</code></p>
 <h1 id='architecture'>Architecture</h1>
 <p>By simply requesting information with a minimum set of demographic information, Particle is able to query partner Health Information Networks (data holders), producing aggregated data in a seamless, efficient and HIPAA compliant manner. </p>
