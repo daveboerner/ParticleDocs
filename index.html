@@ -358,7 +358,7 @@ api.kittens.get
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Berkley</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">:[</span><span class="se">\"</span><span class="s2">237 Hegmann Avenue</span><span class="se">\"</span><span class="s2">],</span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">MA</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1981-07-12</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico@doe.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Aufderhar</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Male</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Federico</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1234</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">02779</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries"</span> <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span> <span class="nt">-H</span>  <span class="s2">"Authorization: token"</span> <span class="nt">-H</span>  <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{  </span><span class="se">\"</span><span class="s2">address_city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Berkley</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">address_lines</span><span class="se">\"</span><span class="s2">: [    </span><span class="se">\"</span><span class="s2">237 Hegmann Avenue</span><span class="se">\"</span><span class="s2">  ],  </span><span class="se">\"</span><span class="s2">address_state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">MA</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">date_of_birth</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1981-07-12</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Federico@doe.com</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">family_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Aufderhar</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">MALE</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">given_name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Federico</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">npi</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">9876</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">postal_code</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02779</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">purpose_of_use</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">,  </span><span class="se">\"</span><span class="s2">telephone</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1-234-567-8910</span><span class="se">\"</span><span class="s2">}"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/queries</span><span class="dl">'</span><span class="p">;</span>
@@ -464,7 +464,7 @@ api.kittens.get(2)
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/"</span> <span class="nt">-H</span>  <span class="s2">"accept: application/json"</span> <span class="nt">-H</span>  <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/queries/</span><span class="dl">'</span><span class="p">;</span>
@@ -616,7 +616,7 @@ api.kittens.delete(2)
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/zip"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span> <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip"</span> <span class="nt">-H</span>  <span class="s2">"accept: application/zip"</span> <span class="nt">-H</span>  <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip</span><span class="dl">'</span><span class="p">;</span>
@@ -672,7 +672,7 @@ api.kittens.delete(2)
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span> <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}"</span> <span class="nt">-H</span>  <span class="s2">"accept: application/octet-stream"</span> <span class="nt">-H</span>  <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}</span><span class="dl">'</span><span class="p">;</span>
@@ -720,7 +720,7 @@ api.kittens.delete(2)
 <span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
 <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="n">data</span> <span class="o">=</span> 
   <span class="p">{</span>
     <span class="s">"resourceType"</span><span class="p">:</span> <span class="s">"Person"</span><span class="p">,</span>
     <span class="s">"identifier"</span><span class="p">:</span> <span class="p">[</span>
@@ -762,48 +762,48 @@ api.kittens.delete(2)
         <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span>  
-<span class="p">}</span>
+
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
-    "</span>resourceType<span class="s2">": "</span>Person<span class="s2">",
-    "</span>identifier<span class="s2">": [
+    </span><span class="se">\"</span><span class="s2">resourceType</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Person</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">identifier</span><span class="se">\"</span><span class="s2">: [
         {
-            "</span><span class="nb">type</span><span class="s2">": {
-                "</span>text<span class="s2">": "</span>ssn<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: {
+                </span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">ssn</span><span class="se">\"</span><span class="s2">
             },
-            "</span>value<span class="s2">": "</span>123-45-6789<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-45-6789</span><span class="se">\"</span><span class="s2">
         }
     ],
-    "</span>name<span class="s2">": [
+    </span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: [
         {
-            "</span>family<span class="s2">": "</span>Aufderhar<span class="s2">",
-            "</span>given<span class="s2">": [
-                "</span>Federico<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">family</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Aufderhar</span><span class="se">\"</span><span class="s2">,
+            </span><span class="se">\"</span><span class="s2">given</span><span class="se">\"</span><span class="s2">: [
+                </span><span class="se">\"</span><span class="s2">Federico</span><span class="se">\"</span><span class="s2">
             ]
         }
     ],
-    "</span>telecom<span class="s2">": [
+    </span><span class="se">\"</span><span class="s2">telecom</span><span class="se">\"</span><span class="s2">: [
         {
-            "</span>system<span class="s2">": "</span>phone<span class="s2">",
-            "</span>value<span class="s2">": "</span>123-456-7891<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">system</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">phone</span><span class="se">\"</span><span class="s2">,
+            </span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">123-456-7891</span><span class="se">\"</span><span class="s2">
         },
         {
-            "</span>system<span class="s2">": "</span>email<span class="s2">",
-            "</span>value<span class="s2">": "</span>Federico@doe.com<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">system</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">,
+            </span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Federico@doe.com</span><span class="se">\"</span><span class="s2">
         }
     ],
-    "</span>gender<span class="s2">": "</span>male<span class="s2">",
-    "</span>birthDate<span class="s2">": "</span>1981-07-12<span class="s2">",
-    "</span>address<span class="s2">": [
+    </span><span class="se">\"</span><span class="s2">gender</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">male</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">birthDate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">1981-07-12</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">address</span><span class="se">\"</span><span class="s2">: [
         {
-            "</span>line<span class="s2">": [
-                "</span>237 Hegmann Avenue<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">line</span><span class="se">\"</span><span class="s2">: [
+                </span><span class="se">\"</span><span class="s2">237 Hegmann Avenue</span><span class="se">\"</span><span class="s2">
             ],
-            "</span>city<span class="s2">": "</span>Berkley<span class="s2">",
-            "</span>state<span class="s2">": "</span>MA<span class="s2">",
-            "</span>postalCode<span class="s2">": "</span>02779<span class="s2">"
+            </span><span class="se">\"</span><span class="s2">city</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Berkley</span><span class="se">\"</span><span class="s2">,
+            </span><span class="se">\"</span><span class="s2">state</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">MA</span><span class="se">\"</span><span class="s2">,
+            </span><span class="se">\"</span><span class="s2">postalCode</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">02779</span><span class="se">\"</span><span class="s2">
         }
     ]
 }"</span>
@@ -982,13 +982,13 @@ address_lines is an array with each street line seperated by a ,
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
-  "</span>resourceType<span class="s2">": "</span>Parameters<span class="s2">",
-  "</span>parameter<span class="s2">": [{
-    "</span>name<span class="s2">": "</span>purpose<span class="s2">",
-    "</span>valueString<span class="s2">": "</span>TREATMENT<span class="s2">"
-  }]
-}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}}/</span><span class="nv">$query</span><span class="s2">"</span> <span class="nt">-H</span> <span class="s2">"accept: application/json"</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span> <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="nt">-d</span> <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">resourceType</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Parameters</span><span class="se">\"</span><span class="s2">,
+    </span><span class="se">\"</span><span class="s2">parameter</span><span class="se">\"</span><span class="s2">: [{
+      </span><span class="se">\"</span><span class="s2">name</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">purpose</span><span class="se">\"</span><span class="s2">,
+      </span><span class="se">\"</span><span class="s2">valueString</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">TREATMENT</span><span class="se">\"</span><span class="s2">
+    }]
+  }"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</span><span class="dl">'</span><span class="p">;</span>
@@ -1060,14 +1060,14 @@ address_lines is an array with each street line seperated by a ,
 <p>A query operation and its status. 202 Accepted is returned for queries that are still in progress along with the status of the query in the “X-Progress” HTTP header. A list of the FHIR resources found so far will also be returned in the body for queries in progress. 200 Success is returned for queries that have successfully completed along with the complete list of found resources in the body. 500 Internal Server Error is returned for queries which have failed and includes details about the failure in the body. Only Person resources may have their query status checked.</p>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{query_id}/$query'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'token'</span><span class="p">}</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s1">'https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{query_id}/$query'</span> <span class="nt">-H</span> <span class="s2">"Authorization: token"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{person_id}/$query</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span><span class="dl">'</span><span class="s1">https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person/{query_id}/$query</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
 <span class="p">}</span>
@@ -1167,8 +1167,8 @@ address_lines is an array with each street line seperated by a ,
 </tr>
 </thead><tbody>
 <tr>
-<td>person_id</td>
-<td>The ID of the person to request resources from</td>
+<td>query_id</td>
+<td>The ID of the query to request resources from</td>
 </tr>
 </tbody></table>
 <h2 id='get-resources'>GET Resources</h2>
