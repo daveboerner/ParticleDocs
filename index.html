@@ -815,8 +815,7 @@ api.kittens.delete(2)
   <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">token</span><span class="dl">"</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span>   <span class="p">{</span>
     <span class="dl">"</span><span class="s2">resourceType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Person</span><span class="dl">"</span><span class="p">,</span>
     <span class="dl">"</span><span class="s2">identifier</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
@@ -856,8 +855,7 @@ api.kittens.delete(2)
             <span class="dl">"</span><span class="s2">postalCode</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">02779</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">}</span> 
-<span class="p">}</span>
+<span class="p">}</span>  
   <span class="kd">var</span> <span class="nx">datain</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span> <span class="na">body</span><span class="p">:</span> <span class="nx">datain</span><span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -919,7 +917,7 @@ api.kittens.delete(2)
 <p><code>POST https://sandbox-dot-particle-health-staging.uc.r.appspot.com/R4/Person</code></p>
 <h3 id='body-payload-2'>Body Payload</h3>
 <p><code>
-{
+  {
     &quot;resourceType&quot;: &quot;Person&quot;,
     &quot;identifier&quot;: [
         {
@@ -959,7 +957,7 @@ api.kittens.delete(2)
             &quot;postalCode&quot;: &quot;02779&quot;
         }
     ]
-}
+}  
 </code></p>
 
 <aside class="success">
