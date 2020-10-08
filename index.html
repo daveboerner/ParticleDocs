@@ -576,9 +576,7 @@ address_lines is an array with each street line seperated by a ,
 <td>The ID of the query to request files of</td>
 </tr>
 </tbody></table>
-<h2 id='get-zip-file'>GET Zip File</h2>
-<p>The operation will return a zip file of all documents retreived for the patient. </p>
-<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='get-zip-file'>GET Zip File</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/zip'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/zip"</span><span class="p">,</span>
@@ -623,9 +621,7 @@ address_lines is an array with each street line seperated by a ,
 <td>The ID of the query to request a zipped file of</td>
 </tr>
 </tbody></table>
-<h2 id='get-file'>GET File</h2>
-<p>This operation will retrieve the particular document requested.</p>
-<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='get-file'>GET File</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.particlehealth.com/particle-sandbox-api/api/v1/files/{query_id}/{file_id}'</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"octet-stream"</span><span class="p">,</span>
